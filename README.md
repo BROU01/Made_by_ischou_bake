@@ -18,6 +18,8 @@ Le site permet de découvrir le catalogue, de composer un panier, de choisir les
 
 Une preview interactive du parcours de test est disponible ici : **[`docs/test-flow-preview.html`](docs/test-flow-preview.html)**. Elle affiche le site dans un cadre de démonstration et accompagne le test avec une checklist manuelle, un état de progression et les critères de validation.
 
+Une vidéo courte du parcours filmé est également disponible ici : **[`docs/preview-test-flow.mp4`](docs/preview-test-flow.mp4)**. Elle présente le chemin visuel accueil → panier → contrôles → suppléments → remerciement → validation mobile, sans envoyer de commande réelle. Son image d’aperçu est disponible dans [`docs/preview-test-flow-poster.jpg`](docs/preview-test-flow-poster.jpg).
+
 ## Fonctionnalités actuelles
 
 Le site comprend une navigation mono-page par ancres, un héros basé sur le rythme de livraison hebdomadaire, les sections Pastels, Crêpes, Box et Offres, ainsi qu’un panier sous forme de carnet de commande. Les cartes produits ouvrent une fiche détaillée ; les contrôles `+` et `−` modifient les quantités sans ouvrir la fiche.
@@ -126,6 +128,8 @@ Les fichiers `AGENTS.md` et `CLAUDE.md` contiennent des contraintes normatives. 
 │   ├── preview-hero-mobile.png
 │   ├── preview-drawer.png
 │   ├── preview-thankyou.png
+│   ├── preview-test-flow.mp4             # Vidéo du parcours QA
+│   ├── preview-test-flow-poster.jpg      # Poster de la vidéo QA
 │   ├── test-flow-preview.html            # Preview interactive du parcours de test
 │   └── TEST-FLOW.md                      # Scénario QA détaillé
 ├── AGENTS.md
@@ -164,11 +168,17 @@ Pour lancer la preview du parcours de test :
 http://localhost:4173/docs/test-flow-preview.html
 ```
 
+La vidéo du parcours est consultable directement depuis le dépôt ou depuis le serveur local :
+
+```text
+http://localhost:4173/docs/preview-test-flow.mp4
+```
+
 La géolocalisation du navigateur exige généralement un contexte sécurisé. En production, utiliser un hébergement HTTPS et toujours conserver la saisie manuelle d’adresse comme chemin principal de secours.
 
 ## Preview et test manuel
 
-La preview interactive ne remplace pas un test end-to-end automatisé. Elle sert de cockpit QA visuel : elle affiche le vrai `index.html` dans un iframe, rappelle l’ordre des actions et permet de cocher les contrôles réalisés.
+La preview interactive ne remplace pas un test end-to-end automatisé. Elle sert de cockpit QA visuel : elle affiche le vrai `index.html` dans un iframe, rappelle l’ordre des actions et permet de cocher les contrôles réalisés. La vidéo complète ce dispositif en montrant le déroulé attendu sous forme de démonstration visuelle ; elle ne déclenche pas de commande réelle.
 
 Le scénario de référence est disponible dans [`docs/TEST-FLOW.md`](docs/TEST-FLOW.md). Il couvre le chargement, la navigation, les cartes produits, les boutons `+ / −`, le panier, les suppléments, le mode de livraison, la page de remerciement et le lien WhatsApp.
 
