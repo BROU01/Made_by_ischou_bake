@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" fill="none" role="img" aria-label="Made by Ischou">
+  <!-- Toque à base festonnée — tracé pur, aucune dépendance -->
+  <g transform="translate(98 4) scale(1.0)" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 36 C4 34 3 22 11 17 A9.6 9.6 0 0 1 26.4 11.6 A10.8 10.8 0 0 1 43.6 11.6 A9.6 9.6 0 0 1 53 17 C61 22 60 34 51 36"/>
+    <path d="M13 36 H51"/>
+    <path d="M13 36 V50 Q17.75 57 22.5 50 Q27.25 57 32 50 Q36.75 57 41.5 50 Q46.25 57 51 50 V36"/>
+  </g>
+
+  <!-- ATTENTION : ces deux textes dépendent des polices chargées.
+       Voir §2 de LOGO.md — à convertir en <path> avant tout usage
+       en fichier .svg autonome (favicon, profil WhatsApp, impression). -->
+  <text x="130" y="93"
+        text-anchor="middle"
+        font-family="'Inter Tight', system-ui, sans-serif"
+        font-size="17" font-weight="700"
+        letter-spacing="4.2"
+        fill="currentColor">MADE BY</text>
+
+  <text x="130" y="158"
+        text-anchor="middle"
+        font-family="Yellowtail, cursive"
+        font-size="72"
+        fill="currentColor">Ischou</text>
+</svg>

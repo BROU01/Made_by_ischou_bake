@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Made by Ischou">
+  <g stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 37 C5.5 34.5 5 23 12.5 18.5 A9.4 9.4 0 0 1 27 13.5 A10.6 10.6 0 0 1 43 13.5 A9.4 9.4 0 0 1 51.5 18.5 C59 23 58.5 34.5 50 37"/>
+    <path d="M14 37 V49 H50 V37"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+# Dependencies and archives
+extracted/
+assets.zip
+assets/Progress bar.zip
+assets/progressbar/
+
+# Duplicate assets
+assets/shopping bag.gif
+
+# Screenshots and test files
+screenshots/
+shot_*.png
+test_*.py
+view_shots.html
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
