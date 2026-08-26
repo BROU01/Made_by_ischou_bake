@@ -119,11 +119,11 @@ Les fichiers `AGENTS.md` et `CLAUDE.md` contiennent des contraintes normatives. 
 ├── assets/
 │   ├── shoppingbag.gif                # Animation de remerciement
 │   ├── hero section photo/
-│   │   └── made_by_ischou_hero_tabletop.png
+│   │   └── made_by_ischou_hero_tabletop.jpg
 │   ├── images box crepes/
-│   │   ├── crepe_box_chocolate_banana_client_style.png
-│   │   ├── crepe_box_chocolate_client_style.png
-│   │   └── crepe_box_vanilla_client_style.png
+│   │   ├── crepe_box_chocolate_banana_client_style.jpg
+│   │   ├── crepe_box_chocolate_client_style.jpg
+│   │   └── crepe_box_vanilla_client_style.jpg
 │   └── pastels_et_crepes_jpeg/
 │       ├── pastel-classique.jpg
 │       ├── pastel-gourmand.jpg
@@ -184,6 +184,26 @@ http://localhost:4173/docs/preview-test-flow.mp4
 ```
 
 La géolocalisation du navigateur exige généralement un contexte sécurisé. En production, utiliser un hébergement HTTPS et toujours conserver la saisie manuelle d’adresse comme chemin principal de secours.
+
+## Publication gratuite avec GitHub Pages
+
+Le dépôt étant public, il peut être publié gratuitement avec GitHub Pages. Pour ce dépôt de projet, l’adresse publique attendue est :
+
+```text
+https://brou01.github.io/Made_by_ischou_bake/
+```
+
+La publication utilise la branche `main` et la racine `/` du dépôt. Aucun build n’est nécessaire : GitHub Pages sert directement `index.html`, les SVG et le dossier `assets`. Les chemins relatifs utilisés par le site permettent au projet de fonctionner sous le préfixe `/Made_by_ischou_bake/`.
+
+Après activation de Pages dans les paramètres du dépôt, attendre la fin du déploiement puis tester l’URL avec une fenêtre privée. Le sous-domaine `github.io` est gratuit ; un nom de domaine personnalisé nécessite un domaine séparé et une configuration DNS. GitHub Pages convient à ce site statique, mais le traitement de commande reste externalisé vers WhatsApp et aucune donnée de commande n’est stockée sur GitHub Pages.
+
+Pour une publication manuelle :
+
+```text
+Settings → Pages → Deploy from a branch → main → /(root) → Save
+```
+
+Après chaque modification publiée sur `main`, GitHub Pages reconstruit automatiquement le site. Vérifier les actions GitHub et attendre que le déploiement soit marqué comme terminé avant de conclure à une erreur du site.
 
 ## Preview et test manuel
 
