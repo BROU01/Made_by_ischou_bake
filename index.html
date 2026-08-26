@@ -330,11 +330,12 @@ section{padding:clamp(40px,8vw,64px) 0}
 }
 
 /* Stepper */
-.stepper{display:inline-flex;align-items:center;background:var(--creme);border:1px solid var(--creme-fonce);border-radius:999px;overflow:hidden}
-.stepper button{width:32px;height:32px;font-size:1.1rem;font-weight:700;color:var(--framboise);display:grid;place-items:center;transition:background .15s}
-.stepper button:hover{background:var(--creme-fonce)}
-.stepper button:disabled{color:var(--creme-fonce);cursor:not-allowed}
-.stepper .qty{min-width:26px;text-align:center;font-family:"Martian Mono",monospace;font-weight:700;font-size:.82rem;font-variant-numeric:tabular-nums}
+.stepper{display:inline-flex;align-items:center;background:var(--creme);border:1px solid var(--creme-fonce);border-radius:999px;overflow:hidden;flex:none}
+.stepper button{width:32px;height:32px;font-size:1.1rem;line-height:1;font-weight:800;color:var(--framboise);display:grid;place-items:center;transition:background .15s,color .15s;flex:none}
+.stepper button:hover:not(:disabled){background:var(--creme-fonce)}
+.stepper button:focus-visible{outline:2px solid var(--or);outline-offset:-3px}
+.stepper button:disabled{color:#c7b39f;background:rgba(255,255,255,.28);cursor:not-allowed;opacity:1}
+.stepper .qty{min-width:26px;text-align:center;font-family:"Martian Mono",monospace;font-weight:700;font-size:.82rem;font-variant-numeric:tabular-nums;color:var(--chocolat-texte)}
 
 /* ============================================================
    OFFRES — fond chocolat
@@ -346,23 +347,26 @@ section{padding:clamp(40px,8vw,64px) 0}
 .offres-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .offre{
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
-  border-radius:var(--rayon);padding:24px;display:flex;flex-direction:column;gap:8px;
-  transition:transform .2s var(--ease),background .2s;cursor:pointer;
+  border-radius:var(--rayon);padding:24px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .2s var(--ease),background .2s,border-color .2s;cursor:pointer;
 }
-.offre:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}
-.offre .n{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--or);font-weight:700}
+.offre:hover{transform:translateY(-3px);background:rgba(255,255,255,.1);border-color:rgba(255,210,108,.45)}
+.offre-head{display:flex;flex-direction:column;gap:4px}
+.offre .n{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--or);font-weight:800}
+.offre-kicker{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(251,243,233,.5);font-weight:700}
+.offre-price-row{display:flex;align-items:baseline;gap:10px;margin-top:2px}
 .offre .amt{font-family:"Martian Mono",monospace;font-weight:700;font-size:2rem;line-height:1;color:#fff}
-.offre p{font-size:.86rem;color:rgba(251,243,233,.7);line-height:1.5}
-.offre .offre-details{margin-top:8px;font-size:.82rem;color:rgba(251,243,233,.6);line-height:1.5}
+.offre-unit{font-size:.75rem;color:rgba(251,243,233,.58)}
+.offre p{font-size:.86rem;color:rgba(251,243,233,.78);line-height:1.5;margin:0}
+.offre .offre-details{font-size:.82rem;color:rgba(251,243,233,.6);line-height:1.5;flex:1}
 .offre .offre-details strong{color:var(--creme)}
-.offre .offre-cta{
-  align-self:flex-start;margin-top:8px;
-  display:inline-flex;align-items:center;gap:7px;
-  background:var(--or);color:#3a2a08;font-weight:700;
-  padding:10px 18px;border-radius:999px;font-size:.86rem;transition:background .15s;
-}
-.offre .offre-cta:hover{background:#d5a949}
-.offre .offre-cta svg{width:14px;height:14px}
+.offre-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+.offre-actions-label{font-size:.72rem;color:rgba(251,243,233,.62);font-weight:700}
+.offre .stepper{background:rgba(251,243,233,.96);border-color:rgba(251,243,233,.65)}
+.offre .stepper button{color:var(--framboise-fonce)}
+.offre .stepper button:disabled{color:#bda994;background:#f1e5d8}
+.offre .stepper .qty{color:var(--chocolat-texte)}
+@media(max-width:640px){.offre{padding:20px}.offre .amt{font-size:1.7rem}}
 
 /* ============================================================
    EXTRAS & INFOS
@@ -506,10 +510,14 @@ footer a:hover{color:var(--or)}
 }
 .geo-btn:hover{background:var(--creme)}
 .geo-btn svg{width:17px;height:17px}
-.geo-status{margin-top:10px;font-size:.82rem;padding:10px 14px;border-radius:10px;display:none}
-.geo-status.ok{display:block;background:rgba(62,123,58,.1);color:var(--vert);border:1px solid rgba(62,123,58,.28)}
-.geo-status.err{display:block;background:rgba(188,27,87,.08);color:var(--framboise-fonce);border:1px solid rgba(188,27,87,.22)}
-.geo-status a{color:inherit;font-weight:700;text-decoration:underline}
+.geo-status{margin-top:10px;font-size:.86rem;line-height:1.45;padding:12px 14px;border-radius:12px;display:none}
+.geo-status.ok{display:block;background:rgba(62,123,58,.1);color:#245b27;border:1px solid rgba(62,123,58,.38)}
+.geo-status.pending{display:block;background:#fff8e8;color:#6d4a05;border:1px solid rgba(194,150,59,.55)}
+.geo-status.err{display:flex;align-items:flex-start;gap:10px;background:#fff0f5;color:#7a153b;border:2px solid var(--framboise);box-shadow:0 4px 14px rgba(188,27,87,.12);font-weight:600}
+.geo-status.err strong{display:block;color:#65102f;font-size:.88rem;margin-bottom:2px}
+.geo-status.err strong + span{display:block}
+.geo-status-icon{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:var(--framboise);color:#fff;font-weight:900;line-height:1}
+.geo-status a{color:inherit;font-weight:800;text-decoration:underline}
 .delivery-zone{display:none}
 .delivery-zone.show{display:block;animation:fade .25s ease}
 @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
@@ -1021,7 +1029,7 @@ body.thank-you-lock-scroll{overflow:hidden}
         <div class="eyebrow">Nos offres pastels</div>
         <h2>Plus on est, moins on paye</h2>
       </div>
-      <p>Des formules avantageuses pour partager. Le prix diminue quand la quantité augmente.</p>
+      <p>Des packs simples à commander, pensés pour partager sans prise de tête.</p>
     </div>
     <div class="offres-grid" id="grid-offres"></div>
   </div>
@@ -1238,7 +1246,7 @@ body.thank-you-lock-scroll{overflow:hidden}
         <span class="thank-you-progress-value" id="thankYouProgressValue">0%</span>
       </div>
     </div>
-    <button type="button" id="thankYouOpenNow" class="thank-you-open-now">Ouvrir WhatsApp maintenant</button>
+    <button type="button" id="thankYouOpenNow" class="thank-you-open-now">Ouvrir WhatsApp</button>
   </div>
 </section>
 
@@ -1402,8 +1410,9 @@ function stepper(id) {
   wrap.className = "stepper";
   wrap.setAttribute("data-for", id);
   const qty = (cart[id] || { qty: 0 }).qty;
-  wrap.innerHTML = `<button type="button" aria-label="Diminuer la quantité de ${nom}">${qty > 0 ? "−" : ""}</button><span class="qty" aria-live="polite">${qty}</span><button type="button" aria-label="Augmenter la quantité de ${nom}">+</button>`;
+  wrap.innerHTML = `<button type="button" aria-label="Diminuer la quantité de ${nom}">−</button><span class="qty" aria-live="polite">${qty}</span><button type="button" aria-label="Augmenter la quantité de ${nom}">+</button>`;
   const [btnMinus, display, btnPlus] = wrap.children;
+  btnMinus.disabled = qty === 0;
   btnMinus.onclick = function(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -1486,8 +1495,13 @@ function syncAll(changedId) {
 
 /* --- Nouvelle fonction : met à jour seulement le span .qty du stepper ciblé --- */
 function syncCartQty(id) {
-  const span = document.querySelector(`.stepper[data-for="${id}"] .qty`);
-  if (span) span.textContent = cart[id]?.qty || 0;
+  const wrap = document.querySelector(`.stepper[data-for="${id}"]`);
+  if (!wrap) return;
+  const qty = cart[id]?.qty || 0;
+  const span = wrap.querySelector(".qty");
+  const btnMinus = wrap.querySelector("button:first-child");
+  if (span) span.textContent = qty;
+  if (btnMinus) btnMinus.disabled = qty === 0;
 }
 
 /* ============================================================
@@ -1618,12 +1632,16 @@ const geoStatus = document.getElementById("geoStatus");
 geoBtn.addEventListener("click", () => {
   if (!("geolocation" in navigator)) { showGeoError("La géolocalisation n'est pas disponible sur cet appareil. Indiquez plutôt votre adresse ci-dessous."); return; }
   geoBtn.textContent = "Localisation en cours…"; geoBtn.disabled = true;
+  geoStatus.className = "geo-status pending";
+  geoStatus.setAttribute("role", "status");
+  geoStatus.innerHTML = `<strong>Recherche de votre position…</strong><br><span>Si cela prend trop de temps, vous pourrez saisir votre adresse manuellement.</span>`;
   navigator.geolocation.getCurrentPosition(
     pos => {
       const {latitude:lat,longitude:lng} = pos.coords;
       const url = `https://maps.google.com/?q=${lat.toFixed(6)},${lng.toFixed(6)}`;
       geo = { lat, lng, url };
       geoStatus.className = "geo-status ok";
+      geoStatus.setAttribute("role", "status");
       geoStatus.innerHTML = `Position captée — <a href="${url}" target="_blank" rel="noopener">voir sur la carte</a>. Elle sera jointe à votre message.`;
       resetGeoBtn("Position captée");
     },
@@ -1636,7 +1654,11 @@ geoBtn.addEventListener("click", () => {
     { enableHighAccuracy:true, timeout:10000, maximumAge:0 }
   );
 });
-function showGeoError(msg) { geoStatus.className = "geo-status err"; geoStatus.textContent = msg; }
+function showGeoError(msg) {
+  geoStatus.className = "geo-status err";
+  geoStatus.setAttribute("role", "alert");
+  geoStatus.innerHTML = `<span class="geo-status-icon" aria-hidden="true">!</span><span><strong>Localisation non disponible</strong><span>${msg}</span></span>`;
+}
 function resetGeoBtn(text) {
   geoBtn.disabled = false;
   geoBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg> ${text || "Partager ma position (GPS)"}`;
@@ -1716,7 +1738,7 @@ function openThankYouBeforeWhatsApp() {
   document.getElementById("thankYouClose").focus();
 
   const startTime = performance.now();
-  const duration = 3000;
+  const duration = 7000;
   let lastAccessibleValue = -1;
 
   function tick(now) {
@@ -1802,7 +1824,7 @@ function carteBox(b) {
 function carteOffre(o) {
   const card = document.createElement("div");
   card.className = "offre"; card.dataset.id = o.id;
-  card.innerHTML = `<div class="n">${o.nom}</div><div class="amt">${fmt(o.prix)}</div><p>${o.desc}</p>${o.details ? `<div class="offre-details">${o.details}</div>` : ""}<div data-stepper="${o.id}" onclick="event.stopPropagation()"></div>`;
+  card.innerHTML = `<div class="offre-head"><div class="offre-kicker">Formule à partager</div><div class="n">${o.nom}</div></div><div class="offre-price-row"><div class="amt">${fmt(o.prix)}</div><span class="offre-unit">le pack</span></div><p>${o.desc}</p>${o.details ? `<div class="offre-details">${o.details}</div>` : ""}<div class="offre-actions"><span class="offre-actions-label">Quantité</span><div data-stepper="${o.id}" onclick="event.stopPropagation()"></div></div>`;
   card.querySelector("[data-stepper]").replaceWith(stepper(o.id));
   card.addEventListener("click", () => openDetail(o.id));
   return card;
