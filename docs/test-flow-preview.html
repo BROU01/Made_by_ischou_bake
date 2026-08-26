@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview QA — Made by Ischou</title>
+  <style>
+    :root {
+      --raspberry: #bc1b57;
+      --burgundy: #9a1447;
+      --wine: #7a1230;
+      --ink: #2a1810;
+      --cream: #fbf3e9;
+      --cream-dark: #f3e6d5;
+      --amber: #c2963b;
+      --green: #3e7b3a;
+      --line: rgba(42, 24, 16, .14);
+      --shadow: 0 18px 48px rgba(42, 24, 16, .12);
+      --ease: cubic-bezier(.23, 1, .32, 1);
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--cream); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(194, 150, 59, .13), transparent 28rem),
+        var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+
+    .shell { width: min(1500px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      color: var(--cream);
+      background: var(--raspberry);
+      box-shadow: 4px 4px 0 var(--wine);
+      font-size: 1.1rem;
+    }
+    .eyebrow {
+      color: var(--raspberry);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 13ch;
+      margin-bottom: 14px;
+      font-size: clamp(2.1rem, 4.5vw, 4.7rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+    h1 em { color: var(--raspberry); font-style: normal; }
+    h2 { margin-bottom: 8px; font-size: clamp(1.35rem, 2vw, 2rem); letter-spacing: -.04em; }
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, .9fr);
+      gap: 30px;
+      align-items: end;
+      padding: 22px 0 30px;
+    }
+    .intro-copy p { max-width: 62ch; color: rgba(42, 24, 16, .7); line-height: 1.6; }
+    .intro-note {
+      align-self: stretch;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.35);
+    }
+    .intro-note strong { display: block; margin: 4px 0 8px; font-size: 1.05rem; }
+    .intro-note span { color: rgba(42, 24, 16, .68); font-size: .9rem; line-height: 1.5; }
+
+    .preview-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.42fr) minmax(320px, .58fr);
+      gap: 22px;
+      align-items: start;
+      padding-bottom: 36px;
+    }
+    .site-frame, .qa-panel {
+      border: 1px solid rgba(42,24,16,.13);
+      border-radius: 24px;
+      background: rgba(255,255,255,.52);
+      box-shadow: var(--shadow);
+    }
+    .site-frame { overflow: hidden; }
+    .frame-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 54px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,243,233,.88);
+    }
+    .traffic { display: flex; gap: 6px; }
+    .traffic i { width: 9px; height: 9px; border-radius: 50%; background: var(--raspberry); opacity: .72; }
+    .traffic i:nth-child(2) { background: var(--amber); }
+    .traffic i:nth-child(3) { background: var(--green); }
+    .frame-url {
+      min-width: 0;
+      overflow: hidden;
+      color: rgba(42,24,16,.55);
+      font: .72rem ui-monospace, SFMono-Regular, Menlo, monospace;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .frame-action {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+    .frame-action:hover { border-color: var(--raspberry); color: var(--raspberry); }
+    iframe {
+      display: block;
+      width: 100%;
+      height: min(76vh, 850px);
+      min-height: 620px;
+      border: 0;
+      background: var(--cream);
+    }
+
+    .qa-panel { position: sticky; top: 18px; padding: 22px; }
+    .qa-head { display: flex; align-items: start; justify-content: space-between; gap: 14px; }
+    .qa-head p { margin-bottom: 0; color: rgba(42,24,16,.66); font-size: .88rem; line-height: 1.45; }
+    .status {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      color: var(--burgundy);
+      background: rgba(188,27,87,.1);
+      font-size: .68rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .status.is-ready { color: var(--green); background: rgba(62,123,58,.12); }
+    .progress-wrap { margin: 20px 0 18px; }
+    .progress-meta { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; color: rgba(42,24,16,.66); font-size: .75rem; font-weight: 800; }
+    .progress-track { height: 10px; overflow: hidden; border-radius: 999px; background: var(--cream-dark); }
+    .progress-fill { width: 0%; height: 100%; border-radius: inherit; background: var(--raspberry); transition: width 420ms var(--ease); }
+
+    .steps { display: grid; gap: 9px; }
+    .step {
+      display: grid;
+      grid-template-columns: 32px minmax(0,1fr) auto;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      color: var(--ink);
+      background: rgba(255,255,255,.4);
+      text-align: left;
+      cursor: pointer;
+      transition: transform 180ms var(--ease), border-color 180ms var(--ease), background 180ms var(--ease);
+    }
+    .step:hover { transform: translateY(-2px); border-color: rgba(188,27,87,.42); }
+    .step:focus-visible, .frame-action:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: var(--cream);
+      background: var(--ink);
+      font-size: .75rem;
+      font-weight: 900;
+    }
+    .step strong { display: block; font-size: .83rem; }
+    .step small { display: block; margin-top: 2px; color: rgba(42,24,16,.62); font-size: .71rem; line-height: 1.35; }
+    .step-check { color: rgba(42,24,16,.35); font-size: 1.05rem; font-weight: 900; }
+    .step.is-done { border-color: rgba(62,123,58,.34); background: rgba(62,123,58,.08); }
+    .step.is-done .step-number { background: var(--green); }
+    .step.is-done .step-check { color: var(--green); }
+
+    .qa-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+    .qa-btn {
+      min-height: 40px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+    .qa-btn:hover { border-color: var(--raspberry); color: var(--raspberry); }
+    .qa-btn.primary { border-color: var(--raspberry); color: var(--cream); background: var(--raspberry); }
+    .qa-btn.primary:hover { border-color: var(--burgundy); background: var(--burgundy); }
+    .qa-note { margin: 18px 0 0; padding-top: 15px; border-top: 1px dashed var(--line); color: rgba(42,24,16,.62); font-size: .72rem; line-height: 1.5; }
+
+    .scenario {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      padding: 0 0 44px;
+    }
+    .scenario-card { padding: 18px; border-top: 3px solid var(--raspberry); background: rgba(255,255,255,.42); }
+    .scenario-card:nth-child(2) { border-color: var(--amber); }
+    .scenario-card:nth-child(3) { border-color: var(--green); }
+    .scenario-card h3 { margin-bottom: 7px; font-size: 1rem; }
+    .scenario-card p { margin-bottom: 0; color: rgba(42,24,16,.67); font-size: .82rem; line-height: 1.5; }
+    footer { padding: 18px 0 40px; color: rgba(42,24,16,.58); font-size: .76rem; }
+
+    @media (max-width: 1050px) {
+      .intro, .preview-layout { grid-template-columns: 1fr; }
+      .qa-panel { position: static; }
+      iframe { height: 720px; }
+    }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 22px, 620px); }
+      .topbar { align-items: flex-start; }
+      .intro { padding-top: 8px; }
+      .preview-layout { gap: 14px; }
+      .site-frame, .qa-panel { border-radius: 18px; }
+      iframe { min-height: 600px; height: 76vh; }
+      .frame-toolbar { padding: 10px; }
+      .frame-url { display: none; }
+      .scenario { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MI</span>
+        <span>Made by Ischou<br><small style="font-weight:600;opacity:.58">Preview QA</small></span>
+      </a>
+      <a class="frame-action" href="../index.html" target="_blank" rel="noopener">Ouvrir le site</a>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <div class="eyebrow">Parcours de validation</div>
+        <h1>Tester le site <em>comme un client.</em></h1>
+        <p>Cette preview encadre le vrai site et transforme le parcours de commande en scénario QA lisible. Utilisez le site dans le cadre de gauche, puis cochez chaque contrôle dans le panneau de droite.</p>
+      </div>
+      <aside class="intro-note">
+        <div class="eyebrow">Méthode</div>
+        <strong>Un test manuel, visible et reproductible</strong>
+        <span>La checklist ne simule pas une commande WhatsApp et n’envoie aucun message. Elle sert à vérifier l’interface sans toucher à un compte réel.</span>
+      </aside>
+    </section>
+
+    <section class="preview-layout" aria-label="Preview du site et checklist QA">
+      <div class="site-frame">
+        <div class="frame-toolbar">
+          <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="frame-url">made-by-ischou-bake / index.html</div>
+          <a class="frame-action" href="../index.html" target="_blank" rel="noopener">Nouvel onglet</a>
+        </div>
+        <iframe src="../index.html" title="Site Made by Ischou — aperçu test"></iframe>
+      </div>
+
+      <aside class="qa-panel" aria-labelledby="qa-title">
+        <div class="qa-head">
+          <div>
+            <div class="eyebrow">Checklist</div>
+            <h2 id="qa-title">Process test</h2>
+            <p>Cliquez sur une étape pour la marquer comme vérifiée.</p>
+          </div>
+          <span id="qaStatus" class="status">À tester</span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-meta"><span>Progression du test</span><span id="progressText">0 / 8</span></div>
+          <div class="progress-track" aria-hidden="true"><div id="progressFill" class="progress-fill"></div></div>
+        </div>
+
+        <div id="steps" class="steps">
+          <button class="step" type="button" data-step="1"><span class="step-number">1</span><span><strong>Charger la page</strong><small>Le hero, la navbar et les assets apparaissent sans erreur.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="2"><span class="step-number">2</span><span><strong>Naviguer aux sections</strong><small>Les ancres Pastels, Crêpes, Box, Offres et Infos restent sur la page.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="3"><span class="step-number">3</span><span><strong>Ouvrir une fiche</strong><small>La fiche détail s’ouvre sans changer le parcours général.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="4"><span class="step-number">4</span><span><strong>Tester + / −</strong><small>La quantité change sans ouvrir la fiche produit ni rediriger.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="5"><span class="step-number">5</span><span><strong>Vérifier le panier</strong><small>Total, suppression, annulation et état vide restent cohérents.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="6"><span class="step-number">6</span><span><strong>Vérifier les suppléments</strong><small>Banane +200 F et Chocolat +500 F sont distincts et comptés.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="7"><span class="step-number">7</span><span><strong>Tester livraison / take-away</strong><small>L’adresse reste disponible et le GPS est demandé volontairement.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+          <button class="step" type="button" data-step="8"><span class="step-number">8</span><span><strong>Préparer WhatsApp</strong><small>Le remerciement progresse trois secondes sans vider le panier.</small></span><span class="step-check" aria-hidden="true">○</span></button>
+        </div>
+
+        <div class="qa-actions">
+          <button id="simulateBtn" class="qa-btn primary" type="button">Simuler la progression</button>
+          <button id="resetBtn" class="qa-btn" type="button">Réinitialiser</button>
+        </div>
+        <p class="qa-note"><strong>Important :</strong> pour ne pas envoyer une vraie commande, n’appuyez pas sur « Envoyer sur WhatsApp » pendant une démonstration. Utilisez la checklist et le bouton de simulation de cette preview.</p>
+      </aside>
+    </section>
+
+    <section class="scenario" aria-label="Scénarios complémentaires">
+      <article class="scenario-card"><h3>Test données métier</h3><p>Vérifier les prix officiels, le Pastel Gourmand à partir de 350 F, les box et les suppléments sans ajouter d’information inventée.</p></article>
+      <article class="scenario-card"><h3>Test mobile</h3><p>Redimensionner la fenêtre à 360 px, vérifier le menu, le panier plein écran, les zones tactiles et la lisibilité de chaque CTA.</p></article>
+      <article class="scenario-card"><h3>Test qualité</h3><p>Ouvrir la console, confirmer l’absence d’erreur, vérifier les assets et tester `prefers-reduced-motion` avant la mise en ligne.</p></article>
+    </section>
+
+    <footer>Preview locale — Made by Ischou · Cette page est un outil de validation, pas un tunnel de commande.</footer>
+  </main>
+
+  <script>
+    (() => {
+      const steps = [...document.querySelectorAll('.step')];
+      const fill = document.querySelector('#progressFill');
+      const progressText = document.querySelector('#progressText');
+      const status = document.querySelector('#qaStatus');
+      const resetBtn = document.querySelector('#resetBtn');
+      const simulateBtn = document.querySelector('#simulateBtn');
+      let simulationTimer = null;
+
+      function update() {
+        const done = steps.filter((step) => step.classList.contains('is-done')).length;
+        const percent = Math.round((done / steps.length) * 100);
+        fill.style.width = `${percent}%`;
+        progressText.textContent = `${done} / ${steps.length}`;
+        status.textContent = done === steps.length ? 'Validé' : done ? 'En cours' : 'À tester';
+        status.classList.toggle('is-ready', done === steps.length);
+      }
+
+      steps.forEach((step) => {
+        step.addEventListener('click', () => {
+          step.classList.toggle('is-done');
+          const check = step.querySelector('.step-check');
+          check.textContent = step.classList.contains('is-done') ? '✓' : '○';
+          update();
+        });
+      });
+
+      resetBtn.addEventListener('click', () => {
+        window.clearInterval(simulationTimer);
+        steps.forEach((step) => {
+          step.classList.remove('is-done');
+          step.querySelector('.step-check').textContent = '○';
+        });
+        simulateBtn.textContent = 'Simuler la progression';
+        update();
+      });
+
+      simulateBtn.addEventListener('click', () => {
+        window.clearInterval(simulationTimer);
+        steps.forEach((step) => {
+          step.classList.remove('is-done');
+          step.querySelector('.step-check').textContent = '○';
+        });
+        let index = 0;
+        simulateBtn.textContent = 'Simulation en cours…';
+        simulationTimer = window.setInterval(() => {
+          const step = steps[index];
+          step.classList.add('is-done');
+          step.querySelector('.step-check').textContent = '✓';
+          update();
+          index += 1;
+          if (index >= steps.length) {
+            window.clearInterval(simulationTimer);
+            simulateBtn.textContent = 'Parcours simulé';
+          }
+        }, 360);
+      });
+
+      update();
+    })();
+  </script>
+</body>
+</html>
