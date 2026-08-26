@@ -18,7 +18,15 @@ Le site permet de découvrir le catalogue, de composer un panier, de choisir les
 
 Une preview interactive du parcours de test est disponible ici : **[`docs/test-flow-preview.html`](docs/test-flow-preview.html)**. Elle affiche le site dans un cadre de démonstration et accompagne le test avec une checklist manuelle, un état de progression et les critères de validation.
 
-Une vidéo courte du parcours filmé est également disponible ici : **[`docs/preview-test-flow.mp4`](docs/preview-test-flow.mp4)**. Elle présente le chemin visuel accueil → panier → contrôles → suppléments → remerciement → validation mobile, sans envoyer de commande réelle. Son image d’aperçu est disponible dans [`docs/preview-test-flow-poster.jpg`](docs/preview-test-flow-poster.jpg).
+Une vidéo courte du parcours filmé est également disponible ici : **[`docs/preview-test-flow.mp4`](docs/preview-test-flow.mp4)**. Elle présente le chemin visuel accueil → panier → contrôles → suppléments → remerciement → validation mobile, sans envoyer de commande réelle.
+
+### Aperçu vidéo du parcours QA
+
+Cliquez sur l’aperçu animé pour ouvrir la vidéo MP4 complète :
+
+[![Voir la vidéo du parcours QA](docs/preview-test-flow.gif)](docs/preview-test-flow.mp4)
+
+Version fixe de secours : [`docs/preview-test-flow-poster.jpg`](docs/preview-test-flow-poster.jpg).
 
 ## Fonctionnalités actuelles
 
@@ -129,6 +137,7 @@ Les fichiers `AGENTS.md` et `CLAUDE.md` contiennent des contraintes normatives. 
 │   ├── preview-drawer.png
 │   ├── preview-thankyou.png
 │   ├── preview-test-flow.mp4             # Vidéo du parcours QA
+│   ├── preview-test-flow.gif             # Aperçu animé visible dans le README
 │   ├── preview-test-flow-poster.jpg      # Poster de la vidéo QA
 │   ├── test-flow-preview.html            # Preview interactive du parcours de test
 │   └── TEST-FLOW.md                      # Scénario QA détaillé
