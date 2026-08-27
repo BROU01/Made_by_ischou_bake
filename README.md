@@ -1,238 +1,136 @@
 # Made by Ischou
 
-Site mono-page de commande pour **Made by Ischou**, une marque artisanale de pastels et de crêpes faites maison à Lomé, au Togo.
+Landing page mono-page de commande WhatsApp pour **Made by Ischou**, atelier artisanal de pastels et crêpes faits maison à **Adidigomé, Lomé**.
 
-Le site permet de découvrir le catalogue, de composer un panier, de choisir les suppléments et le mode de retrait ou de livraison, puis d’ouvrir un message WhatsApp prérempli. Il ne traite pas de paiement en ligne et ne possède pas de compte utilisateur.
+Le site public est déployé sur [ischou.vercel.app](https://ischou.vercel.app). Il permet de parcourir le catalogue, composer une commande, appliquer le supplément Banane lorsque le produit y est éligible, choisir le retrait ou la livraison, puis ouvrir un message WhatsApp prérempli. Aucun paiement ni compte client n’est demandé sur le site.
 
-> **Statut du dépôt :** le livrable applicatif principal est `index.html`. Avant la mise en production, la preview de test et les contrôles de validation doivent être exécutés sur un hébergement HTTPS ou un serveur local.
+> **Principe de transparence :** les prix, recettes et quantités viennent exclusivement des décisions validées par la cliente. Les visuels doivent représenter des portions généreuses et ne doivent jamais faire croire à une mini-portion.
 
 ## Aperçu
 
-| Hero desktop | Hero mobile |
+| Hero desktop — refonte actuelle | Hero mobile — refonte actuelle |
 | --- | --- |
-| ![Aperçu hero desktop](docs/preview-hero-desktop.png) | ![Aperçu hero mobile](docs/preview-hero-mobile.png) |
+| ![Aperçu hero desktop de la refonte](docs/qa-refonte-desktop.png) | ![Aperçu hero mobile de la refonte](docs/qa-refonte-mobile.png) |
 
-| Panier / carnet de commande | Remerciement avant WhatsApp |
+La vidéo historique du parcours QA reste disponible via l’aperçu animé ci-dessous. La refonte actuelle conserve le panier, la géolocalisation et le popup, tout en actualisant les sections et le catalogue.
+
+[![Voir la vidéo historique du parcours QA](docs/preview-test-flow.gif)](docs/preview-test-flow.mp4)
+
+## Expérience publique
+
+La page suit une narration éditoriale inspirée de principes observables sur [Pear](https://pear.no/) — une phrase manifeste, des compositions asymétriques et une progression calme — sans reprendre sa marque, son code, ses textes, ses visuels ni son identité graphique.[1]
+
+| Section | Rôle |
 | --- | --- |
-| ![Aperçu du panier](docs/preview-drawer.png) | ![Aperçu de la page de remerciement](docs/preview-thankyou.png) |
+| Accueil | Présente la promesse, le rythme de commande et l’accès rapide aux offres. |
+| Pastels | Réunit les trois pastels individuels et leurs steppers de quantité. |
+| Crêpes | Présente les deux crêpes individuelles avec une référence visuelle de longueur généreuse. |
+| Offres spéciales | Regroupe les six box de crêpes et les six formules de pastels, avec quantités et prix séparés. |
+| Infos | Rappelle livraison, retrait, contacts et règle de supplément. |
+| Panier | Centralise les produits, les suppléments, la livraison, une note et le message WhatsApp. |
 
-Une preview interactive du parcours de test est disponible ici : **[`docs/test-flow-preview.html`](docs/test-flow-preview.html)**. Elle affiche le site dans un cadre de démonstration et accompagne le test avec une checklist manuelle, un état de progression et les critères de validation.
+Les ancres du menu gardent le visiteur sur une seule page. Les interactions n’utilisent pas de slider automatique, de vidéo lourde ni de calcul permanent au scroll.
 
-Une vidéo courte du parcours filmé est également disponible ici : **[`docs/preview-test-flow.mp4`](docs/preview-test-flow.mp4)**. Elle présente le chemin visuel accueil → panier → contrôles → suppléments → remerciement → validation mobile, sans envoyer de commande réelle.
+## Catalogue validé
 
-### Aperçu vidéo du parcours QA
+| Famille | Produit | Prix | Contenu ou quantité |
+| --- | --- | ---: | --- |
+| Pastel | Pastel Poisson fumé | `250 F` | Poisson fumé, légumes. |
+| Pastel | Pastel Classique | `300 F` | Sardines. |
+| Pastel | Pastel Gourmand | À partir de `350 F` | Garniture au choix : sardine, saucisse ou œuf. |
+| Crêpe | Crêpe Chocolat | `500 F` | Crêpe longue et moelleuse garnie de chocolat fondant. |
+| Crêpe | Crêpe Vanille | `300 F` | Crêpe longue et souple à la vanille. |
+| Box | Petite Box Vanille | `1 500 F` | 7 crêpes roulées à la vanille. |
+| Box | Petite Box Chocolat | `2 500 F` | 6 crêpes roulées au chocolat. |
+| Box | Petite Box Chocolat-Banane | `3 500 F` | 6 crêpes roulées au chocolat et à la banane. |
+| Box | Box Classique Vanille | `2 400 F` | 10 crêpes roulées à la vanille. |
+| Box | Box Classique Chocolat | `4 000 F` | 9 crêpes roulées au chocolat. |
+| Box | Box Classique Chocolat-Banane | `5 600 F` | 9 crêpes roulées au chocolat et à la banane. |
+| Formule | 5 Pastels Poisson fumé | `1 000 F` | 5 pastels fixes. |
+| Formule | 5 Pastels Classique | `1 200 F` | 5 pastels fixes. |
+| Formule | 5 Pastels Gourmand | `1 500 F` | 5 pastels fixes. |
+| Formule | 11 Pastels Poisson fumé | `2 000 F` | 11 pastels fixes. |
+| Formule | 11 Pastels Classique | `2 400 F` | 11 pastels fixes. |
+| Formule | 11 Pastels Gourmand | `3 000 F` | 11 pastels fixes. |
 
-Cliquez sur l’aperçu animé pour ouvrir la vidéo MP4 complète :
+Le seul supplément payant actif est **Banane `+200 F`**. Il est calculé par crêpe individuelle ou par box et n’apparaît jamais pour les pastels ou les formules de pastels. Le supplément Chocolat, Fraise et « autre garniture » sont absents.
 
-[![Voir la vidéo du parcours QA](docs/preview-test-flow.gif)](docs/preview-test-flow.mp4)
+## Commande WhatsApp
 
-Version fixe de secours : [`docs/preview-test-flow-poster.jpg`](docs/preview-test-flow-poster.jpg).
-
-## Fonctionnalités actuelles
-
-Le site comprend une navigation mono-page par ancres, un héros basé sur le rythme de livraison hebdomadaire, les sections Pastels, Crêpes, Box et Offres, ainsi qu’un panier sous forme de carnet de commande. Les cartes produits ouvrent une fiche détaillée ; les contrôles `+` et `−` modifient les quantités sans ouvrir la fiche.
-
-Le panier prend en charge les articles à prix fixe, le **Pastel Gourmand** à prix variable, les suppléments crêpes avec quantité propre, le mode take-away, la livraison à Lomé, la saisie d’une adresse et le partage volontaire de la position GPS. La commande finale est générée dans un format WhatsApp prérempli.
-
-La page de remerciement utilise `assets/shoppingbag.gif`, une barre de progression déterministe de sept secondes et un bouton d’ouverture manuelle de WhatsApp. Le texte reste volontairement honnête : l’ouverture de WhatsApp prépare le message, mais la commande n’est confirmée qu’après l’envoi effectif dans WhatsApp.
-
-| Domaine | Fonctionnement |
-| --- | --- |
-| Catalogue | Pastels, crêpes, box, offres et suppléments selon le catalogue validé |
-| Panier | Ajout, retrait, augmentation, diminution, suppression et annulation de suppression |
-| Suppléments | Banane `+200 F` uniquement |
-| Livraison | Livraison à Lomé à partir de `1 000 F`, coût exact confirmé sur WhatsApp |
-| Take-away | Retrait sur place à Adidigomé, Ave Maria, Rue Mélonku |
-| GPS | Partage volontaire de la position avec lien Google Maps à six décimales |
-| Commande | Message WhatsApp prérempli vers `71 30 39 11` |
-| Accessibilité | Labels, ARIA, focus, fermeture par Échap et `prefers-reduced-motion` |
-| Responsive | Cible de 360 px à 1 920 px |
-
-## Catalogue de référence
-
-Les prix et compositions doivent rester alignés sur [`PROMPT-CODEX-MAJ-CATALOGUE.md`](PROMPT-CODEX-MAJ-CATALOGUE.md). Ce fichier est la source de vérité métier ; les anciens flyers et les hypothèses générées ne doivent pas remplacer ses décisions.
-
-| Produit | Prix | Composition ou contenu |
-| --- | ---: | --- |
-| Pastel Poisson Fumé | `250 F` | Poisson fumé, légumes |
-| Pastel Classique | `300 F` | Sardines. |
-| Pastel Gourmand | À partir de `350 F` | Sardine, saucisse ou œuf ; prix confirmé selon la garniture |
-| Crêpe Chocolat | `500 F` | Crêpe moelleuse garnie de chocolat fondant |
-| Crêpe Vanille | `300 F` | Crêpe nappée d’une crème vanillée maison |
-| Petite Box | `3 000 F` | 5 à 6 crêpes roulées + chocolat |
-| Box Classique | `4 000 F` | 8 à 10 crêpes roulées + chocolat |
-| Offre 5 Pastels | `1 000 F` | Tous pastels confondus |
-| Offre 10 Pastels | `2 000 F` | Tous pastels confondus |
-
-Le seul supplément payant actuellement documenté est **Banane `+200 F`**. Aucun supplément chocolat actif n’est proposé. Le supplément Fraise est supprimé. Les éventuels extras gratuits doivent rester distincts des suppléments payants et ne doivent être affichés que s’ils sont confirmés dans le catalogue actif.
-
-Le Pastel Gourmand doit conserver l’intitulé **« À partir de 350 F »**. Lorsque le panier contient ce produit variable, le total doit afficher **« Total estimé »** et le message WhatsApp doit contenir la ligne de confirmation prévue dans le brief catalogue.
-
-## Parcours de commande
-
-Le parcours nominal est le suivant :
+Le panier reste partagé pendant la navigation et peut restaurer les quantités après un rechargement. Il ne stocke ni adresse, ni nom, ni position GPS. Les étapes sont les suivantes :
 
 ```text
-Accueil
-  → choisir Pastels, Crêpes, Box ou Offres
-  → ouvrir une fiche produit si nécessaire
-  → utiliser + ou − pour régler la quantité
-  → ouvrir le panier depuis l’en-tête
-  → choisir les suppléments et les extras disponibles
-  → choisir livraison ou take-away
-  → indiquer une adresse ou partager volontairement le GPS
-  → vérifier le total et la note
-  → cliquer sur Envoyer sur WhatsApp
-  → afficher le remerciement pendant 3 secondes
+Choisir les produits
+  → ajuster les quantités avec − / +
+  → ajouter Banane si le produit est une crêpe ou une box
+  → choisir retrait ou livraison
+  → saisir une adresse ou partager volontairement le GPS
+  → préparer le message
+  → voir le popup de remerciement pendant 7 secondes
   → ouvrir WhatsApp avec le message prérempli
 ```
 
-Les boutons de quantité sont des contrôles d’achat, pas des liens vers la fiche produit. Un clic sur `+` ou `−` ne doit jamais ouvrir une carte ni modifier l’URL. Le bouton WhatsApp ne doit pas vider le panier avant l’ouverture de l’application.
+Les frais de livraison ne sont pas inclus dans le total tant qu’un barème par zone n’a pas été validé. Lorsque la livraison est sélectionnée, le message WhatsApp demande explicitement la confirmation de ce coût. Le panier affiche **« Total estimé »** lorsqu’il contient un Pastel Gourmand.
 
-## Architecture technique
+## Performance et accessibilité
 
-Le projet est volontairement léger :
+La landing page est pensée pour une connexion mobile parfois lente. Une seule image est prioritaire dans le hero ; les autres images sont différées avec `loading="lazy"`, bénéficient de dimensions explicites et sont comprimées en JPEG. Les révélations de section reposent sur `IntersectionObserver`, et les animations se limitent à `transform` et `opacity`.
 
-| Élément | Choix actuel |
+Le site inclut un lien d’évitement, des labels explicites, des focus visibles, des cibles tactiles, une fermeture par Échap du panier et du popup, ainsi qu’un mode `prefers-reduced-motion` qui désactive les animations non essentielles.
+
+## Visuels et vérité de portion
+
+Les repères de taille sont documentés dans [`docs/REFONTE-PEAR-PERFORMANCE.md`](docs/REFONTE-PEAR-PERFORMANCE.md). Les prompts prêts à copier pour les six box et les six formules de pastels se trouvent dans [`docs/PROMPTS-VISUELS-OFFRES.md`](docs/PROMPTS-VISUELS-OFFRES.md).
+
+Les photos de calibration des pastels et des crêpes sont déjà intégrées et optimisées. Les images définitives des six box et des six formules seront ajoutées uniquement après vérification manuelle du nombre exact de pièces annoncées ; aucune photo provisoire ne doit servir de preuve d’une quantité différente.
+
+## Architecture
+
+| Élément | Choix |
 | --- | --- |
-| Application | Un seul fichier `index.html` |
-| Technologie | HTML, CSS et JavaScript inline |
-| Build | Aucun build requis |
-| Framework | Aucun framework |
-| Serveur | Aucun backend applicatif |
-| Commande | Lien `wa.me` avec message encodé par `encodeURIComponent` |
-| Paiement | Aucun paiement sur le site |
-| Stockage | Le comportement réel doit être vérifié contre les briefs normatifs avant production |
-| Police | Google Fonts : Bricolage Grotesque, Inter Tight, Martian Mono et Yellowtail selon les usages documentés |
+| Application publique | `index.html` unique, HTML, CSS et JavaScript inline. |
+| Hébergement | Vercel, déploiement automatique depuis `main`. |
+| Commande | Lien `wa.me` avec texte encodé via `encodeURIComponent`. |
+| Panier | État navigateur et restauration locale de quantités sans donnée personnelle. |
+| Paiement | Aucun paiement en ligne. |
+| Backend | Aucun dans cette landing page statique. |
+| Administration | Migration full-stack sécurisée prévue séparément ; `/adminrootonly` ne doit pas être ajouté à ce site statique comme faux accès protégé. |
 
-Les fichiers `AGENTS.md` et `CLAUDE.md` contiennent des contraintes normatives. Ils indiquent notamment que `PROMPT-CODEX-MAJ-CATALOGUE.md` est la source unique du catalogue, que `PROMPT-CODEX-TIMER.md` gouverne le timer et que `index-v1.html` ne sert que de référence pour le format WhatsApp et la géolocalisation.
+## Déploiement Vercel
 
-## Structure du dépôt
+Le projet Vercel est relié au dépôt `BROU01/Made_by_ischou_bake`, branche `main`. Toute mise à jour poussée sur cette branche entraîne un nouveau déploiement. Vérifiez le statut **Ready** dans l’onglet **Deployments**, puis ouvrez [https://ischou.vercel.app](https://ischou.vercel.app). Un rechargement forcé peut être nécessaire après un changement important.
 
-```text
-.
-├── index.html                         # Application complète : HTML, CSS et JavaScript inline
-├── favicon.svg                        # Favicon de la marque
-├── icon.svg                           # Icône de marque
-├── logo.svg                           # Logo de marque
-├── assets/
-│   ├── shoppingbag.gif                # Animation de remerciement
-│   ├── hero section photo/
-│   │   └── made_by_ischou_hero_tabletop.jpg
-│   ├── images box crepes/
-│   │   ├── crepe_box_chocolate_banana_client_style.jpg
-│   │   ├── crepe_box_chocolate_client_style.jpg
-│   │   └── crepe_box_vanilla_client_style.jpg
-│   └── pastels_et_crepes_jpeg/
-│       ├── pastel-classique.jpg
-│       ├── pastel-gourmand.jpg
-│       ├── pastel-poisson-fume.jpg
-│       ├── crepe-chocolat.jpg
-│       └── crepe-vanille.jpg
-├── docs/
-│   ├── preview-hero-desktop.png
-│   ├── preview-hero-mobile.png
-│   ├── preview-drawer.png
-│   ├── preview-thankyou.png
-│   ├── preview-test-flow.mp4             # Vidéo du parcours QA
-│   ├── preview-test-flow.gif             # Aperçu animé visible dans le README
-│   ├── preview-test-flow-poster.jpg      # Poster de la vidéo QA
-│   ├── test-flow-preview.html            # Preview interactive du parcours de test
-│   └── TEST-FLOW.md                      # Scénario QA détaillé
-├── AGENTS.md
-├── CLAUDE.md
-├── LISEZ-MOI.md
-├── LOGO.md
-├── PROMPT-CODEX-MAJ-CATALOGUE.md
-├── PROMPT-CODEX-REFONTE.md
-├── ROADMAP.md
-└── README.md
-```
+## Contrôles avant communication client
 
-## Assets et identité visuelle
+1. Vérifier que les 17 cartes (3 pastels, 2 crêpes, 6 box et 6 formules) s’affichent avec les prix ci-dessus.
+2. Confirmer que `−` est visible, désactivé à zéro et ne provoque aucune ouverture de fiche.
+3. Vérifier que Banane est proposée uniquement sur une crêpe ou une box et ajoute exactement `200 F`.
+4. Vérifier le message WhatsApp, le total, la livraison et l’alternative d’adresse au GPS.
+5. Vérifier que le popup reste ouvert sept secondes avant WhatsApp.
+6. Vérifier la page sur un téléphone réel et une connexion mobile.
+7. Vérifier manuellement chaque nouvelle image de box ou formule avant publication, en comptant les pièces visibles.
 
-Les assets de marque utilisent `currentColor` et doivent respecter [`LOGO.md`](LOGO.md). Ne pas ajouter d’ombre, de dégradé décoratif ou de recoloration indépendante du feston. Les images produits doivent conserver leur chemin réel et leur nom canonique dans le catalogue.
-
-Le GIF `assets/shoppingbag.gif` est utilisé uniquement dans l’overlay de remerciement. Une absence d’image ne doit pas rendre le site inutilisable : chaque zone visuelle doit posséder un fallback textuel ou typographique cohérent.
-
-## Lancer le site localement
-
-Pour une vérification simple, un serveur HTTP local est préférable à l’ouverture directe de `file://`, notamment pour tester les assets et la géolocalisation. Depuis la racine du dépôt :
-
-```bash
-python3 -m http.server 4173
-```
-
-Puis ouvrir :
+## Fichiers principaux
 
 ```text
-http://localhost:4173/index.html
+index.html                            # Landing page publique complète
+assets/refonte/                       # Photos de calibration JPEG optimisées
+assets/pastels_et_crepes_jpeg/        # Photos individuelles existantes
+docs/REFONTE-PEAR-PERFORMANCE.md      # Direction visuelle et performance
+docs/PROMPTS-VISUELS-OFFRES.md        # Prompts des images à générer
+docs/TEST-FLOW.md                     # Scénario QA historique à mettre à jour au besoin
+AGENTS.md / CLAUDE.md                 # Règles consolidées du dépôt
+todo.md                               # Suivi de la refonte
 ```
 
-Pour lancer la preview du parcours de test :
+## Prochaine étape : administration sécurisée
 
-```text
-http://localhost:4173/docs/test-flow-preview.html
-```
-
-La vidéo du parcours est consultable directement depuis le dépôt ou depuis le serveur local :
-
-```text
-http://localhost:4173/docs/preview-test-flow.mp4
-```
-
-La géolocalisation du navigateur exige généralement un contexte sécurisé. En production, utiliser un hébergement HTTPS et toujours conserver la saisie manuelle d’adresse comme chemin principal de secours.
-
-## Publication gratuite avec GitHub Pages
-
-Le dépôt étant public, il peut être publié gratuitement avec GitHub Pages. Pour ce dépôt de projet, l’adresse publique attendue est :
-
-```text
-https://brou01.github.io/Made_by_ischou_bake/
-```
-
-La publication utilise la branche `main` et la racine `/` du dépôt. Aucun build n’est nécessaire : GitHub Pages sert directement `index.html`, les SVG et le dossier `assets`. Les chemins relatifs utilisés par le site permettent au projet de fonctionner sous le préfixe `/Made_by_ischou_bake/`.
-
-Après activation de Pages dans les paramètres du dépôt, attendre la fin du déploiement puis tester l’URL avec une fenêtre privée. Le sous-domaine `github.io` est gratuit ; un nom de domaine personnalisé nécessite un domaine séparé et une configuration DNS. GitHub Pages convient à ce site statique, mais le traitement de commande reste externalisé vers WhatsApp et aucune donnée de commande n’est stockée sur GitHub Pages.
-
-Pour une publication manuelle :
-
-```text
-Settings → Pages → Deploy from a branch → main → /(root) → Save
-```
-
-Après chaque modification publiée sur `main`, GitHub Pages reconstruit automatiquement le site. Vérifier les actions GitHub et attendre que le déploiement soit marqué comme terminé avant de conclure à une erreur du site.
-
-## Preview et test manuel
-
-La preview interactive ne remplace pas un test end-to-end automatisé. Elle sert de cockpit QA visuel : elle affiche le vrai `index.html` dans un iframe, rappelle l’ordre des actions et permet de cocher les contrôles réalisés. La vidéo complète ce dispositif en montrant le déroulé attendu sous forme de démonstration visuelle ; elle ne déclenche pas de commande réelle.
-
-Le scénario de référence est disponible dans [`docs/TEST-FLOW.md`](docs/TEST-FLOW.md). Il couvre le chargement, la navigation, les cartes produits, les boutons `+ / −`, le panier, les suppléments, le mode de livraison, la page de remerciement et le lien WhatsApp.
-
-Les contrôles minimaux avant mise en ligne sont :
-
-1. aucune erreur JavaScript dans la console ;
-2. aucun asset en erreur 404 ;
-3. `+` et `−` modifient uniquement la quantité ;
-4. le total inclut les suppléments ;
-5. la composition du Pastel Classique reste exactement « Sardines. » ;
-6. le Pastel Gourmand affiche « À partir de 350 F » et « Total estimé » lorsqu’il est sélectionné ;
-7. le supplément Fraise n’apparaît pas ;
-8. la page de remerciement dure environ trois secondes ;
-9. WhatsApp reçoit le message attendu ;
-10. le rendu reste utilisable à 360 px de largeur ;
-11. le site reste navigable au clavier et avec `prefers-reduced-motion`.
-
-## Règles de contribution
-
-Avant toute modification, lire `AGENTS.md`, `CLAUDE.md` et les briefs normatifs. Ne pas corriger le site à partir d’une capture ou d’un ancien flyer si cela contredit le catalogue officiel. Préférer une modification ciblée et vérifiable à une réécriture globale.
-
-Toute nouvelle fonctionnalité doit préciser son impact sur le panier, le message WhatsApp, l’accessibilité, les performances mobiles et les chemins d’assets. Toute information commerciale non présente dans les fichiers de référence doit être confirmée avant d’être ajoutée.
-
-## Feuille de route
-
-La feuille de route détaillée se trouve dans [`ROADMAP.md`](ROADMAP.md). Les prochains contrôles prioritaires concernent le piège de focus du carnet, l’annulation après suppression, le flux livraison/GPS, le format exact du message WhatsApp, le responsive 360–1 920 px, le contraste et l’absence d’erreur console.
+L’administration ne doit pas être masquée derrière une simple URL dans une page statique : son code et ses données resteraient inspectables. La phase suivante consiste à adapter le projet full-stack créé séparément, avec authentification réelle, rôle administrateur, base de données, API protégées et journal des modifications, puis à choisir le mode d’hébergement Vercel compatible avec cette architecture.
 
 ## Licence et statut
 
-Projet privé de **Made by Ischou**. Les textes, visuels et éléments de marque restent soumis à l’autorisation de la propriétaire.
+Les textes, visuels et éléments de marque sont utilisés uniquement avec l’autorisation de **Made by Ischou**. Aucun avis client, prix, recette ou information commerciale ne doit être inventé.
+
+## References
+
+[1]: https://pear.no/ "Pear — référence de principes de mise en scène"
