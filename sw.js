@@ -1,4 +1,4 @@
-const CACHE_NAME = "made-by-ischou-shell-v1";
+const CACHE_NAME = "made-by-ischou-shell-v2";
 const SHELL_PATHS = [
   "/",
   "/index.html",

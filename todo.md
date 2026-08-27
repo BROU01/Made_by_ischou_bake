@@ -56,6 +56,7 @@
 - [x] Examiner l’analyse externe fournie et reproduire le repositionnement en bas de page sur les parcours iPhone, Android et PWA.
 - [x] Corriger la restauration de scroll sans casser les ancres volontaires, les partages de panier ou l’ouverture PWA.
 - [x] Vérifier que le service worker ne sert pas une ancienne version de la logique de scroll aux clients mobiles.
+- [x] Publier sur `main` le renouvellement ciblé du cache PWA afin que les appareils installés récupèrent la correction de scroll, sans intégrer l’administration Preview.
 - [ ] Comparer et choisir une base de données gratuite compatible Vercel, hors Supabase, pour l’admin sécurisé.
 - [ ] Préparer une préproduction de migration admin sans modifier la landing publique servie aujourd’hui.
 - [ ] Configurer l’adresse du premier administrateur dans une variable serveur, jamais dans le code ou un lien public.

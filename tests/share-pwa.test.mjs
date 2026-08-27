@@ -29,9 +29,12 @@ test("le partage et la PWA préservent les garde-fous de confidentialité et de 
   assert.match(html, /beforeinstallprompt/);
   assert.match(html, /Sur iPhone ou iPad/);
   assert.match(html, /navigator\.serviceWorker\.register\("\/sw\.js"\)/);
+  assert.match(html, /navigator\.serviceWorker\.getRegistration\("\/sw\.js"\)/);
+  assert.match(html, /registration\) => registration\?\.update\(\)/);
   const encoder = html.slice(html.indexOf("function encodeCartForShare"), html.indexOf("function decodeSharedCart"));
   assert.doesNotMatch(encoder, /customerName|deliveryAddress|orderNote|Position GPS|geo\.url/);
   assert.match(worker, /const SHELL_PATHS/);
+  assert.match(worker, /const CACHE_NAME = "made-by-ischou-shell-v2"/);
   assert.match(worker, /event\.request\.method !== "GET"/);
   assert.doesNotMatch(worker, /localStorage|Position GPS|WhatsApp|cart/i);
 });

@@ -221,6 +221,13 @@ function initEditorialScroll(){if(window.matchMedia("(prefers-reduced-motion: re
         const navLinks=[...document.querySelectorAll(".nav-links a")];document.getElementById("menuToggle").addEventListener("click",()=>{const menu=document.getElementById("navLinks"),open=menu.classList.toggle("open");document.getElementById("menuToggle").setAttribute("aria-expanded",String(open))});navLinks.forEach(link=>link.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(link=>link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id))}}),{rootMargin:"-45% 0px -50% 0px"});["accueil","pastels","crepes","offres","infos"].forEach(id=>navObserver.observe(document.getElementById(id)));
     let revealObserver;function observeReveals(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.querySelectorAll(".reveal").forEach(item=>item.classList.add("in"));return}revealObserver?.disconnect();revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in");revealObserver.unobserve(entry.target)}}),{threshold:.12,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".reveal").forEach(item=>revealObserver.observe(item))}
     document.addEventListener("keydown",event=>{if(event.key==="Escape"){if(document.getElementById("thanksOverlay").classList.contains("open"))closeThanks();else if(drawer.classList.contains("open"))closeCart()}});window.addEventListener("storage",event=>{if(event.key===CONFIG.storageKey){cart={};bananas={};loadCart();sync()}});document.getElementById("year").textContent=new Date().getFullYear();loadCart();decodeSharedCart();renderCatalogue();sync();if(sharedCartNotice){cartShareStatus.textContent="Panier partagé chargé. Vérifiez votre commande avant WhatsApp."}initRootScrollPosition();initHeroTypewriter();initHeroParallax();initEditorialScroll();initInstall();registerPwa();
+    if ("serviceWorker" in navigator && window.isSecureContext) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.getRegistration("/sw.js")
+          .then((registration) => registration?.update())
+          .catch((error) => console.warn("Vérification PWA indisponible", error));
+      }, { once: true });
+    }
   </script>
 </body>
 </html>
