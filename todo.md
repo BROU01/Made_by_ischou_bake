@@ -22,3 +22,6 @@
 - [x] Renforcer les reveals et le scroll avec des animations performantes limitées à transform et opacity, sans recréer de parallaxe coûteuse.
 - [x] Vérifier que l’intégration des photos, du logo et des animations ne casse ni les prix, ni le panier, ni WhatsApp, ni la réactivité mobile.
 - [x] Arrêter le typewriter après un clic volontaire sur Pastels, Crêpes ou Box afin de respecter l’interaction explicite du visiteur.
+- [x] Inspecter l’archive Progressbar.zip sans l’exécuter et relever les éléments visuels Candy Crush/Pirouline réutilisables.
+- [x] Adapter la progression du popup de remerciement avec le design validé, sans changer le délai de sept secondes ni le comportement WhatsApp.
+- [x] Vérifier le rendu de la progression sur desktop et mobile, avec prefers-reduced-motion et lecteur d’écran.
