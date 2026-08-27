@@ -41,3 +41,5 @@
 - [x] Prévoir un parcours de secours pour les navigateurs intégrés iOS des réseaux sociaux qui limitent la géolocalisation ou l’ouverture d’applications.
 - [x] Vérifier le retour vers WhatsApp et le lien Plans sur iPhone, sans ouverture automatique non consentie ni fuite de position.
 - [x] Exécuter les tests automatisés de compatibilité iPhone et de confidentialité de la géolocalisation avant publication.
+- [x] Afficher, après un refus de localisation iPhone, les étapes de réautorisation Safari fournies par le client.
+- [x] Vérifier que cette aide ne s’affiche pas aux clients Android ni après une position autorisée.

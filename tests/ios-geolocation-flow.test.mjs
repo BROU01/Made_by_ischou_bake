@@ -8,6 +8,13 @@ test("le parcours de géolocalisation préserve consentement, secours et compati
   const html = await readFile(htmlPath, "utf8");
 
   assert.match(html, /id="geoButton">Partager ma position pour la livraison/);
+  assert.match(html, /id="geoIosHelp" class="geo-ios-help" hidden/);
+  assert.match(html, /Autoriser la localisation sur iPhone/);
+  assert.match(html, /Réglages iPhone → Confidentialité et sécurité → Service de localisation/);
+  assert.match(html, /Sites web Safari/);
+  assert.match(html, /function setIOSPermissionHelp\(show\)\{const visible=Boolean\(show&&isIOS\)/);
+  assert.match(html, /setIOSPermissionHelp\(error\.code===1\)/);
+  assert.match(html, /setIOSPermissionHelp\(false\);const coordinates=/);
   assert.match(html, /id="geoMapLink" class="geo-map-link"[^>]*target="_blank" rel="noopener noreferrer" hidden/);
   assert.match(html, /const isIOS=\/iPad\|iPhone\|iPod\//);
   assert.match(html, /const isEmbeddedIOS=\//);

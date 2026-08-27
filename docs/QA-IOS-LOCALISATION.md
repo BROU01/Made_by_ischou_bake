@@ -17,3 +17,9 @@ Les coordonnées utilisées pour le test étaient simulées. Aucune position ré
 Sur iPhone, le lien de vérification utilisera une URL Plans `maps.apple.com` seulement après que Safari a transmis une position autorisée. Le lien est activé par un clic explicite du client : le site ne force jamais l’ouverture de Plans, ne contourne pas l’accord iOS et ne stocke pas la position dans le panier local.
 
 Dans les navigateurs intégrés à Instagram, Facebook ou TikTok, le panier indique qu’il peut être préférable d’ouvrir le site dans Safari. L’adresse ou le point de repère reste disponible dans tous les cas.
+
+## Aide après refus sur iPhone
+
+Après un refus iPhone, le panier affiche maintenant une aide dédiée et masquée par défaut. Elle indique exactement le chemin : **Réglages iPhone → Confidentialité et sécurité → Service de localisation → Sites web Safari**, puis rappelle que Safari peut aussi afficher l’autorisation dans ses réglages de site.
+
+Cette aide est réservée au flux iPhone de permission refusée. Elle se masque dès qu’une nouvelle demande est lancée ou qu’une position est obtenue, et ne s’ajoute pas au parcours Android ni au parcours de localisation réussi.
