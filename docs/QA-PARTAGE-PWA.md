@@ -21,4 +21,8 @@ Un lien de panier de contrôle a été préparé avec deux crêpes Chocolat, un 
 
 Le lien a été ouvert dans une nouvelle session locale. Le panier a bien reconstruit deux Crêpes Chocolat, un supplément Banane et un Pastel Classique, a affiché le message « Panier partagé chargé », puis a retiré le paramètre de partage de l’URL. Le visiteur arrive au hero et peut contrôler sa commande avant WhatsApp.
 
+## Validation Vercel
+
+La version publique correspondant au commit `8ae713e` a été contrôlée en HTTPS. Le manifeste répond avec le nom « Made by Ischou — Pastels & crêpes », les icônes 192 et 512 pixels, le bouton de partage du site et le bouton d’installation. Le service worker actif est bien servi depuis `https://ischou.vercel.app/sw.js`.
+
 Les tests exécutés ici n’ont déclenché ni partage réel, ni commande WhatsApp, ni localisation réelle.
