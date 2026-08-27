@@ -11,8 +11,12 @@ test("la motion éditoriale conserve ses garde-fous de performance et d’access
   assert.match(html, /function initRootScrollPosition\(\)/);
   assert.match(html, /let userHasNavigated=false/);
   assert.match(html, /const shouldReturnToHero=\(\)=>!window\.location\.hash&&!userHasNavigated/);
+  assert.match(html, /topLockUntil=performance\.now\(\)\+2600/);
+  assert.match(html, /function keepAtTopDuringBoot\(\)|const keepAtTopDuringBoot=\(\)=>/);
+  assert.match(html, /requestAnimationFrame\(keepAtTopDuringBoot\)/);
+  assert.match(html, /cancelAnimationFrame\(topLockFrame\)/);
   assert.match(html, /\[45,120,280,560,1000,1600\]\.forEach/);
-  assert.match(html, /window\.addEventListener\("pageshow",event=>\{if\(!event\.persisted\)settleAtTop\(\)\}\)/);
+  assert.match(html, /window\.addEventListener\("pageshow",settleAtTop\)/);
   assert.match(html, /document\.addEventListener\("visibilitychange",\(\)=>\{if\(!document\.hidden\)settleAtTop\(\)\}\)/);
   assert.match(html, /\["touchstart","pointerdown","wheel"\]\.forEach/);
   assert.match(html, /function initEditorialScroll\(\)/);

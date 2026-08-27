@@ -14,6 +14,7 @@ Le site conserve désormais ce comportement volontaire pour les ancres telles qu
 | --- | --- |
 | Historique navigateur | `history.scrollRestoration` est défini sur `manual`. |
 | Retour au hero | Le site remet la position à zéro immédiatement, puis après six délais courts couvrant les restaurations tardives. |
+| Verrou initial | Pendant 2,6 secondes au démarrage, une boucle `requestAnimationFrame` limitée maintient le hero à l’écran si Safari ou Chrome restaure tardivement une ancienne position. |
 | Reprise de PWA | Un retour au premier plan déclenche le même contrôle tant que le client n’a pas commencé à naviguer. |
 | Intention client | Le premier toucher, clic, geste de molette ou raccourci clavier arrête la remise automatique au hero. |
 | Ancre volontaire | Les fragments d’URL ne sont jamais écrasés. |
