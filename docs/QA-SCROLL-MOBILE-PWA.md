@@ -20,3 +20,7 @@ Le site conserve désormais ce comportement volontaire pour les ancres telles qu
 | Ancre volontaire | Les fragments d’URL ne sont jamais écrasés. |
 
 Les quatre tests automatisés du site sont passés après l’ajout de cette protection : motion et scroll, géolocalisation iPhone, partage/PWA et confidentialité des liens de panier.
+
+## Validation Vercel
+
+La version publique du commit `5be1da0` a été ouverte sans fragment. Elle démarre au hero (`scrollY : 0`), utilise `history.scrollRestoration = "manual"` et contient le verrou initial de 2,6 secondes. Le service worker actif est bien `https://ischou.vercel.app/sw.js` ; sa stratégie est réseau d’abord et ne doit donc pas servir une ancienne page lorsque le client est connecté.
