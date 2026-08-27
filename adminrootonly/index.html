@@ -8,44 +8,85 @@
   <link rel="stylesheet" href="/adminrootonly/admin.css">
 </head>
 <body>
-  <main class="shell" id="application" aria-live="polite">
-    <section class="access-card" id="accessCard">
-      <span class="eyebrow">Made by Ischou · accès privé</span>
-      <h1>Administration sécurisée</h1>
-      <p>Connectez-vous avec le lien reçu par e-mail. L’accès aux commandes et aux réglages est vérifié par le serveur à chaque requête.</p>
+  <main class="access-shell" id="application" aria-live="polite">
+    <section class="access-card" id="accessCard" aria-labelledby="accessTitle">
+      <a class="access-brand" href="/" aria-label="Retour à la boutique Made by Ischou"><img src="/logo.svg" alt="Made by Ischou" width="78" height="60"></a>
+      <span class="eyebrow">Espace privé · Made by Ischou</span>
+      <h1 id="accessTitle">L’atelier de gestion.</h1>
+      <p>Recevez un lien de connexion à usage unique. Le serveur vérifie l’autorisation avant toute lecture ou modification.</p>
       <form id="loginForm" novalidate>
         <label for="email">Adresse e-mail administrateur</label>
         <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="nom@domaine.com">
-        <button type="submit" id="loginButton">Recevoir un lien de connexion</button>
+        <button type="submit" id="loginButton">Recevoir le lien sécurisé <span aria-hidden="true">→</span></button>
       </form>
       <p class="status" id="accessStatus" role="status"></p>
-      <a class="back-link" href="/">← Retour à la boutique</a>
+      <a class="back-link" href="/">Retour à la boutique</a>
     </section>
 
-    <section class="admin-app" id="adminApp" hidden>
-      <header class="topbar">
-        <div><span class="eyebrow">Made by Ischou · privé</span><h1>Tableau de bord</h1></div>
-        <div class="topbar-actions"><a href="/" class="public-link">Voir la boutique</a><button id="logoutButton" class="quiet-button">Déconnexion</button></div>
-      </header>
-      <nav class="tabs" aria-label="Navigation d’administration">
-        <button class="tab active" data-tab="dashboard" type="button">Vue d’ensemble</button>
-        <button class="tab" data-tab="catalogue" type="button">Catalogue</button>
-        <button class="tab" data-tab="journal" type="button">Journal</button>
-      </nav>
-      <p class="notice" id="appNotice" role="status"></p>
-      <section id="dashboardPanel" class="panel-view">
-        <div class="kpis" id="kpis"></div>
-        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Données responsables</span><h2>Commandes consenties seulement</h2></div></div><p>Cette Preview ne récupère aucune conversation WhatsApp. Les futures commandes ne pourront être enregistrées qu’après un accord explicite du client.</p></article>
-        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Activité récente</span><h2>Modifications journalisées</h2></div></div><div id="recentActivity" class="activity-list"></div></article>
-      </section>
-      <section id="cataloguePanel" class="panel-view" hidden>
-        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Carte validée</span><h2>Produits, box et formules</h2><p>Le premier chargement initialise uniquement les 17 références déjà présentes sur la boutique, sans données client.</p></div><button id="seedButton" class="quiet-button">Initialiser le catalogue</button></div><div id="catalogue" class="catalogue-list"></div></article>
-      </section>
-      <section id="journalPanel" class="panel-view" hidden>
-        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Traçabilité</span><h2>Journal d’activité</h2><p>Les adresses e-mail ne sont jamais affichées dans cette interface.</p></div></div><div id="activity" class="activity-list"></div></article>
-      </section>
+    <section class="admin-shell" id="adminApp" hidden>
+      <aside class="sidebar" id="adminSidebar" aria-label="Navigation d’administration">
+        <div class="sidebar-brand"><a href="/" aria-label="Voir la boutique Made by Ischou"><img src="/logo.svg" alt="Made by Ischou" width="68" height="52"></a><span>Administration</span></div>
+        <p class="sidebar-caption">Gestion de la boutique</p>
+        <nav class="admin-nav" aria-label="Sections de l’administration">
+          <button class="nav-item active" data-tab="dashboard" type="button" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Vue d’ensemble</span></button>
+          <button class="nav-item" data-tab="catalogue" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg><span>Produits</span></button>
+          <button class="nav-item" data-tab="analytics" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/></svg><span>Audience</span></button>
+          <button class="nav-item" data-tab="journal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg><span>Journal</span></button>
+        </nav>
+        <div class="sidebar-foot"><a href="/" class="shop-link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="m20 4-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>Voir la boutique</a><p>Les données clients ne sont jamais collectées sans accord explicite.</p></div>
+      </aside>
+      <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+      <div class="admin-main">
+        <header class="topbar">
+          <div class="topbar-title"><button type="button" class="menu-button" id="sidebarToggle" aria-label="Ouvrir la navigation" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div><span class="eyebrow" id="pageEyebrow">Vue d’ensemble</span><h1 id="pageTitle">Bonjour, l’atelier est prêt.</h1></div></div>
+          <div class="topbar-actions"><a href="/" class="public-link">Voir la boutique <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="m20 4-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a><button id="logoutButton" class="logout-button" type="button">Déconnexion</button></div>
+        </header>
+        <p class="notice" id="appNotice" role="status"></p>
+
+        <section id="dashboardPanel" class="panel-view" aria-labelledby="pageTitle">
+          <div class="metrics-grid" id="kpis"></div>
+          <div class="content-grid content-grid--wide">
+            <article class="surface-card">
+              <header class="card-head"><div><span class="eyebrow">Journal récent</span><h2>Les dernières actions</h2></div><button class="text-button" type="button" data-go-to="journal">Tout consulter <span aria-hidden="true">→</span></button></header>
+              <div class="activity-list" id="recentActivity"></div>
+            </article>
+            <article class="surface-card emphasis-card">
+              <span class="eyebrow">Commande responsable</span><h2>WhatsApp reste le point de confirmation.</h2><p>La boutique prépare un message WhatsApp ; aucune conversation n’est importée ici. Les commandes ne pourront apparaître dans cet espace qu’après un consentement explicite du client.</p>
+              <div class="policy-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 3 8.8 7 10 4-1.2 7-5.4 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Pas de chiffre de vente, de stock ou de client inventé.</span></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="cataloguePanel" class="panel-view" hidden aria-labelledby="catalogueTitle">
+          <article class="surface-card catalogue-card">
+            <header class="card-head catalogue-head"><div><span class="eyebrow">Carte validée</span><h2 id="catalogueTitle">Les produits de la boutique</h2><p>Modifiez uniquement les informations commerciales réellement confirmées. Toute modification est enregistrée dans le journal.</p></div><button id="seedButton" class="secondary-button" type="button">Initialiser les 17 références</button></header>
+            <div class="catalogue-tools"><label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><span class="sr-only">Rechercher un produit</span><input id="catalogueSearch" type="search" placeholder="Rechercher un produit"></label><label class="select-field"><span class="sr-only">Filtrer par famille</span><select id="familyFilter"><option value="all">Toutes les familles</option><option value="pastel">Pastels</option><option value="crepe">Crêpes</option><option value="box">Box de crêpes</option><option value="pastel-offer">Formules pastels</option></select></label><p id="catalogueCount" class="result-count"></p></div>
+            <div class="table-wrap"><table class="admin-table"><thead><tr><th>Produit</th><th>Famille</th><th>Prix</th><th>Disponibilité</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody id="catalogueBody"></tbody></table></div>
+            <p id="catalogueEmpty" class="empty-state" hidden>Aucune référence ne correspond à cette recherche.</p>
+          </article>
+        </section>
+
+        <section id="analyticsPanel" class="panel-view" hidden aria-labelledby="analyticsTitle">
+          <div class="analytics-intro"><span class="eyebrow">Mesure utile, sans surveillance</span><h2 id="analyticsTitle">Audience &amp; intentions de commande</h2><p>Les chiffres s’afficheront ici après la liaison de Google Analytics 4. Aucune identité, adresse de livraison ou conversation WhatsApp ne sera envoyée à ce tableau.</p></div>
+          <div class="metrics-grid metrics-grid--analytics"><article class="metric-card metric-card--pending"><span>Visites</span><strong>—</strong><small>En attente de liaison GA4</small></article><article class="metric-card metric-card--pending"><span>Ajouts au panier</span><strong>—</strong><small>Événement de conversion à activer</small></article><article class="metric-card metric-card--pending"><span>Intentions WhatsApp</span><strong>—</strong><small>Ce n’est pas une commande confirmée</small></article></div>
+          <div class="content-grid"><article class="surface-card"><header class="card-head"><div><span class="eyebrow">État de connexion</span><h2>Google Analytics 4</h2></div><span class="status-pill status-pill--pending">À relier</span></header><p>La propriété Analytics, son flux Web et son accès de lecture serveur seront configurés hors Git. Lorsque cette étape sera terminée, cette vue proposera des périodes explicites, des sources de trafic et des indicateurs agrégés.</p><div class="analytics-steps"><div><b>01</b><span>Créer la propriété et le flux Web.</span></div><div><b>02</b><span>Ajouter la balise de mesure à la landing.</span></div><div><b>03</b><span>Connecter une lecture serveur réservée aux administrateurs.</span></div></div></article><article class="surface-card"><span class="eyebrow">Événements retenus</span><h2>Ce qui sera mesuré</h2><ul class="event-list"><li>Vue de la page de la boutique</li><li>Ouverture, ajout et retrait du panier</li><li>Partage du site ou du panier</li><li>Démarrage du parcours WhatsApp</li></ul><p class="fine-print">Une ouverture de WhatsApp indique une intention, jamais une commande, un paiement ou une livraison.</p></article></div>
+        </section>
+
+        <section id="journalPanel" class="panel-view" hidden aria-labelledby="journalTitle">
+          <article class="surface-card"><header class="card-head"><div><span class="eyebrow">Traçabilité</span><h2 id="journalTitle">Journal d’activité</h2><p>Les actions sont listées sans afficher l’adresse e-mail de l’administrateur.</p></div></header><div class="activity-list activity-list--full" id="activity"></div></article>
+        </section>
+      </div>
     </section>
   </main>
+
+  <dialog class="product-dialog" id="productDialog" aria-labelledby="dialogTitle">
+    <form id="productForm" method="dialog">
+      <header class="dialog-head"><div><span class="eyebrow">Édition sécurisée</span><h2 id="dialogTitle">Modifier le produit</h2></div><button class="icon-button" type="button" id="dialogClose" aria-label="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <div class="form-grid"><label class="form-field form-field--wide">Nom<input id="editName" name="name" required maxlength="80"></label><label class="form-field form-field--wide">Description<textarea id="editDescription" name="description" required maxlength="500" rows="4"></textarea></label><label class="form-field">Prix (F)<input id="editPrice" name="price" type="number" min="0" step="1" required inputmode="numeric"></label><label class="form-field">Unité<input id="editUnitLabel" name="unitLabel" required maxlength="24"></label><label class="form-field">Quantité annoncée<input id="editQuantity" name="announcedQuantity" type="number" min="1" step="1" inputmode="numeric" placeholder="Non précisée"></label><div class="form-field form-field--checks"><label class="check-field"><input id="editActive" name="isActive" type="checkbox">Visible sur la boutique</label><label class="check-field"><input id="editEstimated" name="isEstimatedPrice" type="checkbox">Prix « à partir de »</label></div></div>
+      <p id="dialogStatus" class="status" role="status"></p><div class="dialog-actions"><button class="quiet-button" type="button" id="dialogCancel">Annuler</button><button class="primary-button" type="submit" id="saveProduct">Enregistrer les modifications</button></div>
+    </form>
+  </dialog>
   <script type="module" src="/adminrootonly/admin.js"></script>
 </body>
 </html>

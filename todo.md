@@ -79,3 +79,7 @@
 - [x] Tester sur la Preview le lien de connexion Firebase, la session HTTP-only et le refus effectif des visiteurs ordinaires.
 - [x] Initialiser les 17 produits validés dans Firestore après une session administrateur réelle, sans données de commande ou client fictives.
 - [x] Normaliser avec robustesse la clé privée Firebase injectée par Vercel afin que les retours à la ligne ou un JSON complet ne bloquent pas la session serveur.
+- [x] Auditer le ZIP du panneau admin fourni sans exécuter son code, afin de cartographier ses écrans, composants et interactions utiles.
+- [x] Repenser la Preview `/adminrootonly` à partir des parcours et du langage visuel du ZIP, sans importer d’identifiants, de données ou de code non vérifié.
+- [x] Préparer l’architecture de trafic Google Analytics 4 avec lecture exclusivement serveur dans la Preview admin.
+- [ ] Afficher dans l’admin des indicateurs de trafic et de conversion sans exposer de données individuelles ni de secrets Google au navigateur.
