@@ -34,3 +34,10 @@
 - [x] Reproduire et corriger le rechargement qui place la landing en bas de page au lieu du hero.
 - [x] Rendre les transitions et la profondeur inspirées de Pear plus perceptibles, sans canvas lourd ni dégradation mobile.
 - [x] Vérifier des rechargements répétés à l’URL racine, avec et sans fragment, sur desktop et mobile avant publication.
+- [x] Diagnostiquer l’échec de géolocalisation signalé sur iPhone et clarifier les erreurs de permission, indisponibilité et délai dépassé.
+- [x] Ajouter un lien vers Plans disponible uniquement après consentement et capture réelle de la position du client.
+- [x] Préserver la saisie manuelle d’adresse et le message WhatsApp lorsque la géolocalisation est refusée ou indisponible.
+- [x] Vérifier les parcours de localisation autorisée, refusée et indisponible avant publication.
+- [x] Prévoir un parcours de secours pour les navigateurs intégrés iOS des réseaux sociaux qui limitent la géolocalisation ou l’ouverture d’applications.
+- [x] Vérifier le retour vers WhatsApp et le lien Plans sur iPhone, sans ouverture automatique non consentie ni fuite de position.
+- [x] Exécuter les tests automatisés de compatibilité iPhone et de confidentialité de la géolocalisation avant publication.
