@@ -5,12 +5,19 @@
 - [x] Concevoir une landing page mono-page plus complète avec sections Accueil, Pastels, Crêpes, Offres spéciales, commande et informations pratiques.
 - [x] Réutiliser les principes de rythme, de narration visuelle et de profondeur de Pear sans copier sa marque, son code, ses visuels ou son contenu.
 - [x] Préserver le panier, les prix, la commande WhatsApp, le popup de 7 secondes et les règles de supplément Banane validées.
-- [ ] Intégrer les six box et les six formules pastels avec leurs descriptions, cartes et visuels correspondant aux quantités annoncées.
+- [x] Intégrer les six box et les six formules pastels avec leurs descriptions, cartes et visuels correspondant aux quantités annoncées.
 - [x] Enrichir les descriptions produit et les transitions de page avec des animations discrètes, accessibles et respectueuses de prefers-reduced-motion.
 - [x] Réduire le poids des images, le JavaScript bloquant et les animations coûteuses afin de limiter les ralentissements sur ordinateur et mobile.
 - [x] Vérifier le responsive, le panier, le popup, WhatsApp, la performance et les erreurs console en production.
 - [x] Publier les changements dans la branche GitHub reliée à Vercel et documenter la mise à jour.
 - [x] Définir des repères visuels de portion pour que chaque pastel paraisse généreux en demi-lune et que chaque crêpe paraisse longue, roulée et épaisse, sans ajouter d’ingrédient non vendu.
-- [ ] Régénérer ou remplacer les visuels de produits, box et formules dont l’échelle ferait croire à des portions plus petites que celles réellement proposées.
-- [ ] Ajouter un contrôle QA visuel des proportions, du nombre de pièces et de la correspondance entre photo, description et produit commandé.
-- [x] Rédiger et livrer les prompts de génération des six box et de la formule 11 Pastels Gourmand, avec les garde-fous de taille, de quantité et de recette validés.
+- [x] Régénérer ou remplacer les visuels de produits, box et formules dont l’échelle ferait croire à des portions plus petites que celles réellement proposées.
+- [x] Ajouter un contrôle QA visuel des proportions, du nombre de pièces et de la correspondance entre photo, description et produit commandé.
+- [ ] Rédiger et livrer les prompts de génération des six box et de la formule 11 Pastels Gourmand, avec les garde-fous de taille, de quantité et de recette validés.
+- [x] Inspecter le ZIP initial sans l’exécuter et relever les composants du logo, du typewriter, du popup et du scroll à restaurer.
+- [x] Optimiser et intégrer les six photos de box et les six photos de formules dans les cards qui portent exactement le même produit et la même quantité.
+- [x] Restaurer le logo d’origine dans la navigation et le footer sans dégrader son contraste ou sa lisibilité.
+- [x] Réintroduire un typewriter accessible dans le hero, avec arrêt au survol, au focus, à l’interaction et avec prefers-reduced-motion.
+- [x] Restaurer le design du popup de remerciement, son GIF et une barre de progression de sept secondes avant WhatsApp.
+- [x] Renforcer les reveals et le scroll avec des animations performantes limitées à transform et opacity, sans recréer de parallaxe coûteuse.
+- [x] Vérifier que l’intégration des photos, du logo et des animations ne casse ni les prix, ni le panier, ni WhatsApp, ni la réactivité mobile.

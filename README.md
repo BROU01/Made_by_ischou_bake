@@ -8,9 +8,9 @@ Le site public est déployé sur [ischou.vercel.app](https://ischou.vercel.app).
 
 ## Aperçu
 
-| Hero desktop — refonte actuelle | Hero mobile — refonte actuelle |
+| Hero desktop — refonte actuelle | Hero mobile — identité restaurée |
 | --- | --- |
-| ![Aperçu hero desktop de la refonte](docs/qa-refonte-desktop.png) | ![Aperçu hero mobile de la refonte](docs/qa-refonte-mobile.png) |
+| ![Aperçu hero desktop de la refonte](docs/qa-refonte-desktop.png) | ![Aperçu hero mobile avec logo et typewriter](docs/qa-identity-mobile.png) |
 
 La vidéo historique du parcours QA reste disponible via l’aperçu animé ci-dessous. La refonte actuelle conserve le panier, la géolocalisation et le popup, tout en actualisant les sections et le catalogue.
 
@@ -82,7 +82,7 @@ Le site inclut un lien d’évitement, des labels explicites, des focus visibles
 
 Les repères de taille sont documentés dans [`docs/REFONTE-PEAR-PERFORMANCE.md`](docs/REFONTE-PEAR-PERFORMANCE.md). Les prompts prêts à copier pour les six box et les six formules de pastels se trouvent dans [`docs/PROMPTS-VISUELS-OFFRES.md`](docs/PROMPTS-VISUELS-OFFRES.md).
 
-Les photos de calibration des pastels et des crêpes sont déjà intégrées et optimisées. Les images définitives des six box et des six formules seront ajoutées uniquement après vérification manuelle du nombre exact de pièces annoncées ; aucune photo provisoire ne doit servir de preuve d’une quantité différente.
+Les photos de calibration des pastels et des crêpes sont intégrées pour rendre la taille des portions perceptible. Les douze photos fournies pour les six box et les six formules sont désormais optimisées, reliées une à une à leur card par un nom de fichier explicite et affichent aussi la quantité annoncée dans la carte. Une future photo doit être vérifiée visuellement avant remplacement si son nombre de pièces semble différent du produit vendu.
 
 ## Architecture
 
@@ -115,6 +115,7 @@ Le projet Vercel est relié au dépôt `BROU01/Made_by_ischou_bake`, branche `ma
 ```text
 index.html                            # Landing page publique complète
 assets/refonte/                       # Photos de calibration JPEG optimisées
+assets/offres/                        # Douze photos associées aux six box et six formules
 assets/pastels_et_crepes_jpeg/        # Photos individuelles existantes
 docs/REFONTE-PEAR-PERFORMANCE.md      # Direction visuelle et performance
 docs/PROMPTS-VISUELS-OFFRES.md        # Prompts des images à générer
