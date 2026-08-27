@@ -23,3 +23,7 @@ Dans les navigateurs intégrés à Instagram, Facebook ou TikTok, le panier indi
 Après un refus iPhone, le panier affiche maintenant une aide dédiée et masquée par défaut. Elle indique exactement le chemin : **Réglages iPhone → Confidentialité et sécurité → Service de localisation → Sites web Safari**, puis rappelle que Safari peut aussi afficher l’autorisation dans ses réglages de site.
 
 Cette aide est réservée au flux iPhone de permission refusée. Elle se masque dès qu’une nouvelle demande est lancée ou qu’une position est obtenue, et ne s’ajoute pas au parcours Android ni au parcours de localisation réussi.
+
+## Diffusion Vercel
+
+Le premier contrôle immédiatement après le push du commit `7ae8019` montrait encore la version précédente dans le cache du navigateur de contrôle. Le statut Vercel attaché au commit a ensuite confirmé que le déploiement était terminé. Une requête directe sans cache vers l’alias public a confirmé la présence de `geoIosHelp`, de l’étape « Sites web Safari » et du nouveau libellé de partage de position.
