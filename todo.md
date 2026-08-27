@@ -50,3 +50,16 @@
 - [x] Vérifier les parcours de validation, partage et installation sans régression sur le panier, WhatsApp ou les performances mobiles.
 - [x] Exécuter le test automatisé du manifeste, du service worker et de la confidentialité du partage avant publication.
 - [x] Afficher une confirmation discrète lorsque le lien public du site est copié en solution de secours.
+- [x] Définir un suivi de commandes qui ne rende jamais les données clients accessibles sur la landing publique.
+- [x] Établir les prérequis Vercel du panneau /adminrootonly : base de données, authentification, rôle admin et journal d’activité.
+- [x] Auditer les opportunités prioritaires de performance, SEO local et conversion sans inventer d’informations commerciales.
+- [x] Examiner l’analyse externe fournie et reproduire le repositionnement en bas de page sur les parcours iPhone, Android et PWA.
+- [x] Corriger la restauration de scroll sans casser les ancres volontaires, les partages de panier ou l’ouverture PWA.
+- [ ] Vérifier que le service worker ne sert pas une ancienne version de la logique de scroll aux clients mobiles.
+- [ ] Comparer et choisir une base de données gratuite compatible Vercel, hors Supabase, pour l’admin sécurisé.
+- [ ] Préparer une préproduction de migration admin sans modifier la landing publique servie aujourd’hui.
+- [ ] Configurer l’adresse du premier administrateur dans une variable serveur, jamais dans le code ou un lien public.
+- [ ] Mettre en place une authentification e-mail à lien unique et des contrôles de rôle côté serveur pour /adminrootonly.
+- [ ] Créer une base de données de préproduction pour catalogue, commandes consenties, médias, réglages et journal d’activité.
+- [ ] Tester que les visiteurs non authentifiés et les comptes non-admin ne peuvent ni lire ni modifier les données administratives.
+- [ ] Présenter la Preview admin et demander une validation explicite avant toute bascule de la landing publique.

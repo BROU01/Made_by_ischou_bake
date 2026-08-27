@@ -7,11 +7,14 @@ const htmlPath = new URL("../index.html", import.meta.url);
 test("la motion éditoriale conserve ses garde-fous de performance et d’accessibilité", async () => {
   const html = await readFile(htmlPath, "utf8");
 
-  assert.match(html, /history\.scrollRestoration = "manual"/);
+  assert.match(html, /history\.scrollRestoration="manual"/);
   assert.match(html, /function initRootScrollPosition\(\)/);
-  assert.match(html, /window\.addEventListener\("pageshow",settleAtTop\)/);
-  assert.match(html, /if\(window\.location\.hash\)return;window\.scrollTo\(\{top:0,left:0,behavior:"auto"\}\)/);
-  assert.match(html, /setTimeout\(returnToTop,900\)/);
+  assert.match(html, /let userHasNavigated=false/);
+  assert.match(html, /const shouldReturnToHero=\(\)=>!window\.location\.hash&&!userHasNavigated/);
+  assert.match(html, /\[45,120,280,560,1000,1600\]\.forEach/);
+  assert.match(html, /window\.addEventListener\("pageshow",event=>\{if\(!event\.persisted\)settleAtTop\(\)\}\)/);
+  assert.match(html, /document\.addEventListener\("visibilitychange",\(\)=>\{if\(!document\.hidden\)settleAtTop\(\)\}\)/);
+  assert.match(html, /\["touchstart","pointerdown","wheel"\]\.forEach/);
   assert.match(html, /function initEditorialScroll\(\)/);
   assert.match(html, /IntersectionObserver\(entries=>\{entries\.forEach\(entry=>\{if\(entry\.isIntersecting\)active\.add/);
   assert.match(html, /window\.addEventListener\("scroll",schedule,\{passive:true\}\)/);
