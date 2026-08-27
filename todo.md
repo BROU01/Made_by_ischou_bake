@@ -13,7 +13,7 @@
 - [x] Définir des repères visuels de portion pour que chaque pastel paraisse généreux en demi-lune et que chaque crêpe paraisse longue, roulée et épaisse, sans ajouter d’ingrédient non vendu.
 - [x] Régénérer ou remplacer les visuels de produits, box et formules dont l’échelle ferait croire à des portions plus petites que celles réellement proposées.
 - [x] Ajouter un contrôle QA visuel des proportions, du nombre de pièces et de la correspondance entre photo, description et produit commandé.
-- [ ] Rédiger et livrer les prompts de génération des six box et de la formule 11 Pastels Gourmand, avec les garde-fous de taille, de quantité et de recette validés.
+- [x] Rédiger et livrer les prompts de génération des six box et de la formule 11 Pastels Gourmand, avec les garde-fous de taille, de quantité et de recette validés.
 - [x] Inspecter le ZIP initial sans l’exécuter et relever les composants du logo, du typewriter, du popup et du scroll à restaurer.
 - [x] Optimiser et intégrer les six photos de box et les six photos de formules dans les cards qui portent exactement le même produit et la même quantité.
 - [x] Restaurer le logo d’origine dans la navigation et le footer sans dégrader son contraste ou sa lisibilité.
