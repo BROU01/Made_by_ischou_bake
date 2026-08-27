@@ -64,3 +64,10 @@
 - [ ] Créer une base de données de préproduction pour catalogue, commandes consenties, médias, réglages et journal d’activité.
 - [ ] Tester que les visiteurs non authentifiés et les comptes non-admin ne peuvent ni lire ni modifier les données administratives.
 - [ ] Présenter la Preview admin et demander une validation explicite avant toute bascule de la landing publique.
+- [ ] Auditer le ZIP du panneau admin fourni sans exécuter son code, afin de cartographier ses écrans, composants et interactions utiles.
+- [ ] Repenser la Preview `/adminrootonly` à partir des parcours et du langage visuel du ZIP, sans importer d’identifiants, de données ou de code non vérifié.
+- [ ] Remplacer l’icône textuelle/emoji de partage mobile par un pictogramme SVG accessible et cohérent avec l’identité Made by Ischou.
+- [ ] Préparer une intégration Google Analytics gratuite respectueuse de la vie privée, avec un suivi des événements de conversion utiles.
+- [ ] Préparer la propriété Google Search Console, le sitemap, robots.txt, les métadonnées Open Graph et le balisage LocalBusiness/Restaurant véridiques.
+- [ ] Afficher dans l’admin des indicateurs de trafic et de conversion sans exposer de données individuelles ni de secrets Google au navigateur.
+- [ ] Élaborer un plan de visibilité gratuite priorisant Lomé, puis des relais organiques plus larges, sans faux avis, faux comptes ou messages non sollicités.
