@@ -73,6 +73,6 @@
 - [x] Créer une application d’administration isolée sous `/adminrootonly` dans la branche `admin-preview`, sans modifier la landing de production.
 - [x] Ajouter les routes Vercel de session, catalogue, tableau de bord et journal avec contrôle Firebase Admin et allowlist serveur.
 - [x] Ajouter la configuration Firebase de navigateur au moment de l’exécution, sans la commiter avec le code.
-- [ ] Préparer les variables Vercel et l’identité de service Firebase nécessaires à la Preview, hors Git.
+- [x] Préparer les variables Vercel et l’identité de service Firebase nécessaires à la Preview, hors Git.
 - [x] Ajouter les tests automatisés des contrôles d’accès et exécuter les tests de régression de la landing.
 - [x] Réexaminer la stratégie de cache PWA avant tout nouveau correctif de scroll mobile afin que les appareils reçoivent réellement la version en ligne.
