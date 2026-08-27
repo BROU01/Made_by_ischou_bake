@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Made by Ischou — Pastels & crêpes",
+  "short_name": "Made by Ischou",
+  "description": "Composez une commande de pastels, crêpes et box à Lomé, puis confirmez-la sur WhatsApp.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBF3E9",
+  "theme_color": "#2A1810",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/made-by-ischou-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/made-by-ischou-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

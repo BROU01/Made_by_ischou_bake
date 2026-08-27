@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Made by Ischou">
+  <rect width="512" height="512" rx="116" fill="#BC1B57"/>
+  <circle cx="256" cy="256" r="178" fill="#FBF3E9"/>
+  <g fill="none" stroke="#BC1B57" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M151 275c-38-11-40-63-7-83a42 42 0 0 1 68-30 47 47 0 0 1 88 0 42 42 0 0 1 68 30c33 20 31 72-7 83"/>
+    <path d="M151 275h210"/>
+    <path d="M151 275v64h210v-64"/>
+  </g>
+</svg>

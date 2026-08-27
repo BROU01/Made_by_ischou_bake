@@ -43,3 +43,10 @@
 - [x] Exécuter les tests automatisés de compatibilité iPhone et de confidentialité de la géolocalisation avant publication.
 - [x] Afficher, après un refus de localisation iPhone, les étapes de réautorisation Safari fournies par le client.
 - [x] Vérifier que cette aide ne s’affiche pas aux clients Android ni après une position autorisée.
+- [x] Ajouter un contrôle de destination pour les commandes en livraison, sans empêcher l’adresse manuelle ni la position GPS consentie.
+- [x] Ajouter le partage natif du site avec une solution de copie du lien quand l’appareil ne le prend pas en charge.
+- [x] Ajouter un lien de panier partageable, limité au contenu et aux quantités des produits, sans nom, adresse ou position du client.
+- [x] Rendre le site installable comme PWA sur Android et fournir une aide claire d’ajout à l’écran d’accueil sur iPhone.
+- [x] Vérifier les parcours de validation, partage et installation sans régression sur le panier, WhatsApp ou les performances mobiles.
+- [x] Exécuter le test automatisé du manifeste, du service worker et de la confidentialité du partage avant publication.
+- [x] Afficher une confirmation discrète lorsque le lien public du site est copié en solution de secours.
