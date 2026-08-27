@@ -372,6 +372,7 @@ section{padding:clamp(40px,8vw,64px) 0}
    EXTRAS & INFOS
    ============================================================ */
 .info-split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.info-split--single{grid-template-columns:minmax(0,1fr)}
 @media(max-width:760px){.info-split{grid-template-columns:1fr}}
 .panel{
   background:#fff;border:1px solid var(--creme-fonce);border-radius:var(--rayon);padding:22px;
@@ -1091,22 +1092,10 @@ body.thank-you-lock-scroll{overflow:hidden}
     </div>
 
     <!-- Garnitures & Saveurs -->
-    <div class="info-split" style="margin-top:28px">
-      <div class="panel reveal-left">
-        <h3>Idées de garnitures pastels</h3>
-        <ul>
-          <li>Sardine – œuf – légumes</li>
-          <li>Sardine – saucisse – œuf – légumes</li>
-          <li>Poisson fumé – œuf – légumes</li>
-          <li>Thon – maïs – légumes</li>
-          <li>Poulet épicé – légumes</li>
-          <li>… et plus encore selon vos envies</li>
-        </ul>
-      </div>
+    <div class="info-split info-split--single" style="margin-top:28px">
       <div class="panel reveal-right">
         <h3>Idées de saveurs crêpes</h3>
         <ul>
-          <li>Chocolat (Nutella)</li>
           <li>Vanille maison</li>
         </ul>
       </div>
