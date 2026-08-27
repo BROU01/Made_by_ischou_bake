@@ -19,7 +19,6 @@ Les six photos source sont déposées dans `assets/pastels_et_crepes_jpeg/` :
 - `pastel-poisson-fume.jpg`
 - `crepe-chocolat.jpg`
 - `crepe-vanille.jpg`
-- `crepe-banane-chocolat.jpg`
 
 Lors de l'intégration, les copies retenues devront être placées dans `assets/` sous le nom exact `assets/{id}.jpg`. Il n'y a pas de photo héros : le héros est le rythme hebdomadaire. La page doit rester convaincante même si une photo est indisponible.
 

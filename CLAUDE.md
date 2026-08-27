@@ -18,7 +18,7 @@ L'ordre de préséance est strict :
 
 ## 2. Identité et produit
 
-**Made by Ischou** est un commerce artisanal de pastels et crêpes faits maison, à Agidogomé (Ave Maria, Rue Mélonku), Lomé, Togo.
+**Made by Ischou** est un commerce artisanal de pastels et crêpes faits maison, à Adidigomé (Ave Maria, Rue Mélonku), Lomé, Togo.
 
 Le site compose une commande puis ouvre un lien WhatsApp pré-rempli. Il ne traite ni paiement, ni compte, ni backend. L'interface et les échanges sont en français. Orthographe obligatoire : **Ischou**.
 
@@ -63,9 +63,9 @@ La Partie 2 de `PROMPT-CODEX-MAJ-CATALOGUE.md` remplace intégralement les donn�
 
 - Pastels : Poisson Fumé — 250 F ; Classique — 300 F, composition exacte « Sardines. » ; Gourmand — « À partir de 350 F », prix variable.
 - Offres : 5 Pastels — 1 000 F ; 10 Pastels — 2 000 F. Les offres 2 et 4 pastels, ainsi que 10 pastels à 2 200 F, sont périmées.
-- Crêpes : Chocolat, Vanille et Banane Chocolat — 500 F la pièce.
+- Crêpes : Chocolat — 500 F la pièce ; Vanille — 300 F la pièce.
 - Box crêpes : Petite Box — 3 000 F ; Box Classique — 4 000 F.
-- Suppléments crêpes payants : Banane +200 F, Chocolat +500 F. Les extras gourmands restent gratuits : Éclats de biscuits, Noix de coco râpée, Amandes effilées.
+- Supplément crêpe payant : Banane +200 F. Aucun supplément chocolat actif. Les extras gourmands restent gratuits uniquement s’ils sont confirmés dans le catalogue actif.
 - WhatsApp : `22871303911` reçoit les commandes. Les deux numéros restent affichés en contact téléphonique.
 
 Le Pastel Gourmand impose les règles H1 à H3 : prix « À partir de 350 F », total libellé « Total estimé » et mention de confirmation dans le message WhatsApp. Les suppléments sont des lignes payantes, avec quantité propre, et restent distincts des extras offerts.

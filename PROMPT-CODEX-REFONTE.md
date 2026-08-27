@@ -245,7 +245,7 @@ exécution neutre.
 
 # Contexte projet
 
-Made by Ischou — pastels et crêpes faits maison, Agidogomé (Ave Maria, Rue
+Made by Ischou — pastels et crêpes faits maison, Adidigomé (Ave Maria, Rue
 Mélonku), Lomé, Togo. Commandes le mercredi, livraison le jeudi uniquement.
 Cible : particuliers à Lomé, mobile Android majoritaire, réseau lent.
 Langue de l'interface : français. Orthographe de marque : « Ischou ».
@@ -417,7 +417,7 @@ Message WhatsApp généré — format à conserver À L'IDENTIQUE :
   Livraison : Oui
   Nom : Kodjo
   Position GPS : https://maps.google.com/?q=6.172500,1.231400
-  Adresse : Agidogomé, à côté de la pharmacie Ave Maria
+  Adresse : Adidigomé, à côté de la pharmacie Ave Maria
   (Livraison partout à Lomé à partir de 1000F)
 
   Pour une livraison le jeudi. Merci !
@@ -440,7 +440,6 @@ PASTELS — 250 F la pièce
 CRÊPES — 500 F la pièce
   crepe-chocolat            Crêpe Chocolat — chocolat fondant (Nutella).
   crepe-vanille             Crêpe Vanille [NOUVEAU] — crème vanillée maison.
-  crepe-banane-chocolat     Crêpe Banane Chocolat — banane fraîche, chocolat.
 
 OFFRES PASTELS
   offre-2    2 pastels    500 F
@@ -455,7 +454,7 @@ CONFIG
   devise       : "F"
   livraisonMin : 1000
 
-Adresse : Agidogomé, Ave Maria, Rue Mélonku, Lomé
+Adresse : Adidigomé, Ave Maria, Rue Mélonku, Lomé
 Téléphones : 71 30 39 11 · 97 11 56 38
 
 # Zones grises — NE TRANCHE PAS SEUL

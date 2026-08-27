@@ -923,7 +923,7 @@ body.thank-you-lock-scroll{overflow:hidden}
     <div class="hero-copy">
       <div class="kicker">Fait avec amour</div>
       <h1 class="h1">Des pastels &amp; crêpes qui donnent envie de <em>revenir</em>.</h1>
-      <p class="lead">Préparés maison à Agidogomé, Lomé. Commandez quand vous voulez, livré le jeudi suivant.</p>
+      <p class="lead">Préparés maison à Adidigomé, Lomé. Commandez quand vous voulez, livré le jeudi suivant.</p>
       <div class="actions">
         <a class="btn-primary" href="#pastels">
           Composer ma commande
@@ -1054,7 +1054,6 @@ body.thank-you-lock-scroll{overflow:hidden}
         <h3>Suppléments crêpes</h3>
         <ul>
           <li>Banane <span class="price">+200 F</span></li>
-          <li>Chocolat <span class="price">+500 F</span></li>
         </ul>
       </div>
     </div>
@@ -1066,7 +1065,7 @@ body.thank-you-lock-scroll{overflow:hidden}
           <span class="info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></span>
           Livraison
         </h3>
-        <p>Livraison partout à Lomé, à partir de 1 000 F. Le coût exact est confirmé sur WhatsApp. Take-away disponible sur place à Agidogomé, Avenue Maria, Rue Mélonku.</p>
+        <p>Livraison partout à Lomé, à partir de 1 000 F. Le coût exact est confirmé sur WhatsApp. Take-away disponible sur place à Adidigomé, Avenue Maria, Rue Mélonku.</p>
       </div>
       <div class="info-card reveal-right">
         <h3>
@@ -1109,7 +1108,6 @@ body.thank-you-lock-scroll{overflow:hidden}
         <ul>
           <li>Chocolat (Nutella)</li>
           <li>Vanille maison</li>
-          <li>Banane Chocolat</li>
         </ul>
       </div>
     </div>
@@ -1126,7 +1124,7 @@ body.thank-you-lock-scroll{overflow:hidden}
       </div>
       <div>
         <h4>Nous trouver</h4>
-        <div class="foot-line"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg> Agidogomé, Ave Maria</div>
+        <div class="foot-line"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg> Adidigomé, Ave Maria</div>
         <p style="margin-left:24px;font-size:.88rem">Rue Mélonku, Lomé</p>
         <div class="foot-line"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg> Commandez quand vous voulez · livraison le jeudi</div>
       </div>
@@ -1266,7 +1264,6 @@ const EXTRAS = [];
 
 const SUPPS = [
   { id:"supp-banane", nom:"Supplément Banane", prix:200 },
-  { id:"supp-chocolat", nom:"Supplément Chocolat", prix:500 }
 ];
 
 const PASTELS = [
@@ -1277,8 +1274,7 @@ const PASTELS = [
 
 const CREPES = [
   { id:"crepe-chocolat", nom:"Crêpe Chocolat", desc:"Crêpe moelleuse garnie de chocolat fondant.", prix:500, photo:"assets/pastels_et_crepes_jpeg/crepe-chocolat.jpg" },
-  { id:"crepe-vanille", nom:"Crêpe Vanille", desc:"Crêpe nappée d'une crème vanillée maison.", prix:500, nouveau:true, photo:"assets/pastels_et_crepes_jpeg/crepe-vanille.jpg" },
-  { id:"crepe-banane-chocolat", nom:"Crêpe Banane Chocolat", desc:"Crêpe, banane fraîche et chocolat fondant.", prix:500, photo:"assets/pastels_et_crepes_jpeg/crepe-banane-chocolat.jpg" }
+  { id:"crepe-vanille", nom:"Crêpe Vanille", desc:"Crêpe nappée d'une crème vanillée maison.", prix:300, nouveau:true, photo:"assets/pastels_et_crepes_jpeg/crepe-vanille.jpg" }
 ];
 
 const BOX = [
@@ -1321,19 +1317,15 @@ const DETAIL = {
     longDesc: `<p>Une crêpe délicate nappée d'une crème vanillée maison préparée avec soin. L'arôme de vanille naturelle fait toute la différence — un vrai moment de douceur.</p><p>Nouveau dans notre assortiment, la crêpe vanille séduit les amateurs de saveurs légères et parfumées.</p>`,
     infos: { "Garniture":"Crème vanillée maison", "Pâte":"Fait maison, cuite à la commande", "Nouveau":"Nouveau dans l'assortiment" }
   },
-  "crepe-banane-chocolat": {
-    longDesc: `<p>La combinaison gagnante : banane fraîche et chocolat fondant dans une crêpe moelleuse. Le fruit apporte une douceur naturelle qui équilibre parfaitement le chocolat.</p><p>Un grand classique de la crêperie, réalisé avec des ingrédients frais du marché.</p>`,
-    infos: { "Garniture":"Banane fraîche, chocolat", "Pâte":"Fait maison, cuite à la commande" }
-  },
   "box-petite": {
     longDesc: `<p>5 à 6 crêpes roulées, garnies au choix et accompagnées de chocolat. Parfait pour un goûter à partager ou pour se faire plaisir en famille.</p><p>Chaque crêpe est roulée à la main et soigneusement disposée dans la box pour une présentation soignée.</p>`,
     infos: { "Contenu":"5 à 6 crêpes roulées", "Accompagnement":"Chocolat", "Format":"Box à emporter" },
-    addons: ["Chocolat +500 F","Banane +200 F"]
+    addons: ["Banane +200 F"]
   },
   "box-classique": {
     longDesc: `<p>8 à 10 crêpes roulées, garnies au choix et accompagnées de chocolat. La grande box pour les vrais gourmands — idéale pour les anniversaires, les réunions ou les familles nombreuses.</p><p>Un généreux assortiment de crêpes faites maison, prêtes à être dégustées.</p>`,
     infos: { "Contenu":"8 à 10 crêpes roulées", "Accompagnement":"Chocolat", "Format":"Grande box à emporter" },
-    addons: ["Chocolat +500 F","Banane +200 F"]
+    addons: ["Banane +200 F"]
   },
   "offre-5": {
     longDesc: `<p>5 pastels au choix parmi toute la gamme, pour seulement 1 000 F. Tous les pastels sont éligibles : poisson fumé, classique, gourmand.</p><p>Le prix baisse quand la quantité monte — c'est le moment de partager !</p>`,

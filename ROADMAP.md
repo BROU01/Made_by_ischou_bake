@@ -38,7 +38,7 @@
   - Offre 2 pastels — supprimée.
   - Crêpes à l'unité — 500 F.
   - Box crêpes — même rythme de livraison du jeudi.
-  - Suppléments : Banane +200 F, Chocolat +500 F, Autre garniture +600 F.
+  - Supplément : Banane +200 F.
   - Extras offerts : Éclats de biscuits, Noix de coco râpée, Amandes effilées.
 
 ## États d'avancement par lot
@@ -52,7 +52,7 @@ Catalogue complet dans `index.html` :
 - **Offres pastels** (2) : 5 pastels — 1 000 F ; 10 pastels — 2 000 F.
 - **Crêpes** (3) : blocs typographiques à 500 F.
 - **Box crêpes** (2) : Petite Box — 3 000 F ; Box Classique — 4 000 F.
-- **Suppléments crêpes** (3) : Banane +200 F, Chocolat +500 F, Autre garniture +600 F. Bloc visuellement distinct des extras.
+- **Supplément crêpe** : Banane +200 F. Bloc visuellement distinct des extras.
 - **Extras gourmands** (3) : Éclats de biscuits, Noix de coco râpée, Amandes effilées — gratuits, badges « offert ».
 - **Panier** : déclencheur dans l'en-tête collant, tiroir latéral avec carnet de commande, stepper par article, suppression de ligne, confirmation de vidage.
 - **Prix variable** : Pastel Gourmand affiché « À partir de 350 F », total libellé « Total estimé », mention de confirmation dans le carnet et le message WhatsApp.

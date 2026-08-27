@@ -34,15 +34,15 @@ Le site comprend une navigation mono-page par ancres, un héros basé sur le ryt
 
 Le panier prend en charge les articles à prix fixe, le **Pastel Gourmand** à prix variable, les suppléments crêpes avec quantité propre, le mode take-away, la livraison à Lomé, la saisie d’une adresse et le partage volontaire de la position GPS. La commande finale est générée dans un format WhatsApp prérempli.
 
-La page de remerciement utilise `assets/shoppingbag.gif`, une barre de progression déterministe de trois secondes et un bouton d’ouverture manuelle de WhatsApp. Le texte reste volontairement honnête : l’ouverture de WhatsApp prépare le message, mais la commande n’est confirmée qu’après l’envoi effectif dans WhatsApp.
+La page de remerciement utilise `assets/shoppingbag.gif`, une barre de progression déterministe de sept secondes et un bouton d’ouverture manuelle de WhatsApp. Le texte reste volontairement honnête : l’ouverture de WhatsApp prépare le message, mais la commande n’est confirmée qu’après l’envoi effectif dans WhatsApp.
 
 | Domaine | Fonctionnement |
 | --- | --- |
 | Catalogue | Pastels, crêpes, box, offres et suppléments selon le catalogue validé |
 | Panier | Ajout, retrait, augmentation, diminution, suppression et annulation de suppression |
-| Suppléments | Banane `+200 F` et Chocolat `+500 F` |
+| Suppléments | Banane `+200 F` uniquement |
 | Livraison | Livraison à Lomé à partir de `1 000 F`, coût exact confirmé sur WhatsApp |
-| Take-away | Retrait sur place à Agidogomé, Ave Maria, Rue Mélonku |
+| Take-away | Retrait sur place à Adidigomé, Ave Maria, Rue Mélonku |
 | GPS | Partage volontaire de la position avec lien Google Maps à six décimales |
 | Commande | Message WhatsApp prérempli vers `71 30 39 11` |
 | Accessibilité | Labels, ARIA, focus, fermeture par Échap et `prefers-reduced-motion` |
@@ -58,14 +58,13 @@ Les prix et compositions doivent rester alignés sur [`PROMPT-CODEX-MAJ-CATALOGU
 | Pastel Classique | `300 F` | Sardines. |
 | Pastel Gourmand | À partir de `350 F` | Sardine, saucisse ou œuf ; prix confirmé selon la garniture |
 | Crêpe Chocolat | `500 F` | Crêpe moelleuse garnie de chocolat fondant |
-| Crêpe Vanille | `500 F` | Crêpe nappée d’une crème vanillée maison |
-| Crêpe Banane Chocolat | `500 F` | Crêpe, banane fraîche et chocolat fondant |
+| Crêpe Vanille | `300 F` | Crêpe nappée d’une crème vanillée maison |
 | Petite Box | `3 000 F` | 5 à 6 crêpes roulées + chocolat |
 | Box Classique | `4 000 F` | 8 à 10 crêpes roulées + chocolat |
 | Offre 5 Pastels | `1 000 F` | Tous pastels confondus |
 | Offre 10 Pastels | `2 000 F` | Tous pastels confondus |
 
-Les seuls suppléments payants actuellement documentés sont **Banane `+200 F`** et **Chocolat `+500 F`**. Le supplément Fraise est supprimé. Les éventuels extras gratuits doivent rester distincts des suppléments payants et ne doivent être affichés que s’ils sont confirmés dans le catalogue actif.
+Le seul supplément payant actuellement documenté est **Banane `+200 F`**. Aucun supplément chocolat actif n’est proposé. Le supplément Fraise est supprimé. Les éventuels extras gratuits doivent rester distincts des suppléments payants et ne doivent être affichés que s’ils sont confirmés dans le catalogue actif.
 
 Le Pastel Gourmand doit conserver l’intitulé **« À partir de 350 F »**. Lorsque le panier contient ce produit variable, le total doit afficher **« Total estimé »** et le message WhatsApp doit contenir la ligne de confirmation prévue dans le brief catalogue.
 
@@ -129,8 +128,7 @@ Les fichiers `AGENTS.md` et `CLAUDE.md` contiennent des contraintes normatives. 
 │       ├── pastel-gourmand.jpg
 │       ├── pastel-poisson-fume.jpg
 │       ├── crepe-chocolat.jpg
-│       ├── crepe-vanille.jpg
-│       └── crepe-banane-chocolat.jpg
+│       └── crepe-vanille.jpg
 ├── docs/
 │   ├── preview-hero-desktop.png
 │   ├── preview-hero-mobile.png

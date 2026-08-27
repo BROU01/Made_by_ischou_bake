@@ -77,7 +77,6 @@ assets/pastel-gourmand.jpg          ⏳ à générer
 assets/pastel-poisson-fume.jpg      ⏳ à générer   (sous réserve — voir Partie 4 §1 du catalogue)
 assets/crepe-chocolat.jpg           ⏳ à générer
 assets/crepe-vanille.jpg            ⏳ à générer
-assets/crepe-banane-chocolat.jpg    ⏳ à générer
 assets/exceptions.json              ⏳ optionnel — voir PROMPT-CODEX-TIMER-AUTO.md
 ```
 

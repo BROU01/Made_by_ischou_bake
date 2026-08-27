@@ -46,14 +46,12 @@ Vérifier que le catalogue utilise les valeurs du brief officiel :
 | Pastel Classique | `300 F` — composition exacte : `Sardines.` |
 | Pastel Gourmand | `À partir de 350 F` |
 | Crêpe Chocolat | `500 F` |
-| Crêpe Vanille | `500 F` |
-| Crêpe Banane Chocolat | `500 F` |
+| Crêpe Vanille | `300 F` |
 | Petite Box | `3 000 F` — 5 à 6 crêpes roulées + chocolat |
 | Box Classique | `4 000 F` — 8 à 10 crêpes roulées + chocolat |
 | Offre 5 Pastels | `1 000 F` |
 | Offre 10 Pastels | `2 000 F` |
 | Supplément Banane | `+200 F` |
-| Supplément Chocolat | `+500 F` |
 | Supplément Fraise | Absent |
 
 ## Contrôles mobile

@@ -67,13 +67,12 @@ Changements par rapport au brief initial :
 
 L'offre « 4 pastels » et l'offre « 10 pastels à 2 200 F » sont **supprimées**.
 
-### Crêpes — 500 F la pièce
+### Crêpes
 
 | id | nom | composition |
 |---|---|---|
 | `crepe-chocolat` | Crêpe Chocolat | Crêpe moelleuse garnie de chocolat fondant. |
 | `crepe-vanille` | Crêpe Vanille `[NOUVEAU]` | Crêpe nappée d'une crème vanillée maison. |
-| `crepe-banane-chocolat` | Crêpe Banane Chocolat | Crêpe, banane fraîche et chocolat fondant. |
 
 ### Box crêpes — NOUVEAU, absent du brief initial
 
@@ -82,12 +81,11 @@ L'offre « 4 pastels » et l'offre « 10 pastels à 2 200 F » sont **supprimée
 | `box-petite` | Petite Box | 3 000 F | 5 à 6 crêpes roulées + chocolat |
 | `box-classique` | Box Classique | 4 000 F | 8 à 10 crêpes roulées + chocolat |
 
-### Suppléments crêpes — payants, NOUVEAU
+### Supplément crêpe — payant
 
 | id | nom | prix |
 |---|---|---|
 | `supp-banane` | Supplément Banane | +200 F |
-| `supp-chocolat` | Supplément Chocolat | +500 F |
 
 Le supplément Fraise est **supprimé**. Ne le fais pas apparaître.
 
@@ -106,7 +104,7 @@ devise       : "F"
 livraisonMin : 1000
 ```
 
-Adresse : Agidogomé, Ave Maria, Rue Mélonku, Lomé
+Adresse : Adidigomé, Ave Maria, Rue Mélonku, Lomé
 Téléphones affichés : 71 30 39 11 · 97 11 56 38
 Orthographe de marque : **Ischou** — jamais « Ishou », jamais « Made by by ».
 
