@@ -20,6 +20,10 @@ test("le partage et la PWA préservent les garde-fous de confidentialité et de 
 
   assert.match(html, /<link rel="manifest" href="app\.webmanifest">/);
   assert.match(html, /id="siteShare"/);
+  assert.match(html, /<button class="site-share" id="siteShare"/);
+  assert.match(html, /<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/);
+  assert.match(html, /\.site-share svg\{width:16px;height:16px;flex:0 0 16px\}/);
+  assert.doesNotMatch(html, /id="siteShare"[^>]*><span aria-hidden="true">↗<\/span>/);
   assert.match(html, /id="cartShare" disabled/);
   assert.match(html, /function validateDelivery\(\)/);
   assert.match(html, /Ajoutez une adresse, un point de repère ou votre position/);
