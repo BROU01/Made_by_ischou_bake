@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Administration sécurisée — Made by Ischou</title>
+  <link rel="stylesheet" href="/adminrootonly/admin.css">
+</head>
+<body>
+  <main class="shell" id="application" aria-live="polite">
+    <section class="access-card" id="accessCard">
+      <span class="eyebrow">Made by Ischou · accès privé</span>
+      <h1>Administration sécurisée</h1>
+      <p>Connectez-vous avec le lien reçu par e-mail. L’accès aux commandes et aux réglages est vérifié par le serveur à chaque requête.</p>
+      <form id="loginForm" novalidate>
+        <label for="email">Adresse e-mail administrateur</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="nom@domaine.com">
+        <button type="submit" id="loginButton">Recevoir un lien de connexion</button>
+      </form>
+      <p class="status" id="accessStatus" role="status"></p>
+      <a class="back-link" href="/">← Retour à la boutique</a>
+    </section>
+
+    <section class="admin-app" id="adminApp" hidden>
+      <header class="topbar">
+        <div><span class="eyebrow">Made by Ischou · privé</span><h1>Tableau de bord</h1></div>
+        <div class="topbar-actions"><a href="/" class="public-link">Voir la boutique</a><button id="logoutButton" class="quiet-button">Déconnexion</button></div>
+      </header>
+      <nav class="tabs" aria-label="Navigation d’administration">
+        <button class="tab active" data-tab="dashboard" type="button">Vue d’ensemble</button>
+        <button class="tab" data-tab="catalogue" type="button">Catalogue</button>
+        <button class="tab" data-tab="journal" type="button">Journal</button>
+      </nav>
+      <p class="notice" id="appNotice" role="status"></p>
+      <section id="dashboardPanel" class="panel-view">
+        <div class="kpis" id="kpis"></div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Données responsables</span><h2>Commandes consenties seulement</h2></div></div><p>Cette Preview ne récupère aucune conversation WhatsApp. Les futures commandes ne pourront être enregistrées qu’après un accord explicite du client.</p></article>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Activité récente</span><h2>Modifications journalisées</h2></div></div><div id="recentActivity" class="activity-list"></div></article>
+      </section>
+      <section id="cataloguePanel" class="panel-view" hidden>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Carte validée</span><h2>Produits, box et formules</h2><p>Le premier chargement initialise uniquement les 17 références déjà présentes sur la boutique, sans données client.</p></div><button id="seedButton" class="quiet-button">Initialiser le catalogue</button></div><div id="catalogue" class="catalogue-list"></div></article>
+      </section>
+      <section id="journalPanel" class="panel-view" hidden>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">Traçabilité</span><h2>Journal d’activité</h2><p>Les adresses e-mail ne sont jamais affichées dans cette interface.</p></div></div><div id="activity" class="activity-list"></div></article>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="/adminrootonly/admin.js"></script>
+</body>
+</html>

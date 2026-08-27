@@ -1,4 +1,6 @@
 # Dependencies and archives
+node_modules/
+.vercel/
 extracted/
 assets.zip
 assets/Progress bar.zip

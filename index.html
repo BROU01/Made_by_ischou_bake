@@ -222,5 +222,16 @@ function initEditorialScroll(){if(window.matchMedia("(prefers-reduced-motion: re
     let revealObserver;function observeReveals(){if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.querySelectorAll(".reveal").forEach(item=>item.classList.add("in"));return}revealObserver?.disconnect();revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in");revealObserver.unobserve(entry.target)}}),{threshold:.12,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".reveal").forEach(item=>revealObserver.observe(item))}
     document.addEventListener("keydown",event=>{if(event.key==="Escape"){if(document.getElementById("thanksOverlay").classList.contains("open"))closeThanks();else if(drawer.classList.contains("open"))closeCart()}});window.addEventListener("storage",event=>{if(event.key===CONFIG.storageKey){cart={};bananas={};loadCart();sync()}});document.getElementById("year").textContent=new Date().getFullYear();loadCart();decodeSharedCart();renderCatalogue();sync();if(sharedCartNotice){cartShareStatus.textContent="Panier partagé chargé. Vérifiez votre commande avant WhatsApp."}initRootScrollPosition();initHeroTypewriter();initHeroParallax();initEditorialScroll();initInstall();registerPwa();
   </script>
+  <script>
+    // Demande au navigateur de vérifier un nouveau service worker après le chargement.
+    // Le cache versionné dans sw.js garantit que la nouvelle landing remplace l’ancienne.
+    if ("serviceWorker" in navigator && window.isSecureContext) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.getRegistration("/sw.js")
+          .then((registration) => registration?.update())
+          .catch((error) => console.warn("Vérification PWA indisponible", error));
+      }, { once: true });
+    }
+  </script>
 </body>
 </html>
