@@ -83,3 +83,4 @@
 - [x] Repenser la Preview `/adminrootonly` à partir des parcours et du langage visuel du ZIP, sans importer d’identifiants, de données ou de code non vérifié.
 - [x] Préparer l’architecture de trafic Google Analytics 4 avec lecture exclusivement serveur dans la Preview admin.
 - [ ] Afficher dans l’admin des indicateurs de trafic et de conversion sans exposer de données individuelles ni de secrets Google au navigateur.
+- [x] Remplacer l’icône textuelle/emoji de partage mobile par un pictogramme SVG accessible et cohérent avec l’identité Made by Ischou.
