@@ -25,3 +25,9 @@ Les amplitudes ont été portées à 26 px pour le visuel Crêpes et 18 px pour 
 ## Contrôle des ancres
 
 Une navigation explicite vers `#offres` conserve sa destination (`Pixels above viewport : 3 344`) et affiche bien le chapitre Offres. Le retour automatique au hero ne s’applique donc pas lorsqu’un visiteur demande volontairement une section avec un lien interne.
+
+## Validation Vercel
+
+La version de production au commit `edce9ef` a été ouverte à l’URL racine cache-bustée. Elle démarre au hero (`Pixels above viewport : 0`). La console de la page confirme `history.scrollRestoration = "manual"`, la présence de la routine de retour au hero, quatre chapitres de motion, les profondeurs `26` et `18`, ainsi que l’absence de débordement horizontal.
+
+Un rechargement réel de cette version de production a ensuite été exécuté : la page revient au hero (`Pixels above viewport : 0`).

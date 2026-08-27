@@ -33,4 +33,4 @@
 - [ ] Définir le premier compte administrateur et la procédure sécurisée de connexion après mise en production du backend.
 - [x] Reproduire et corriger le rechargement qui place la landing en bas de page au lieu du hero.
 - [x] Rendre les transitions et la profondeur inspirées de Pear plus perceptibles, sans canvas lourd ni dégradation mobile.
-- [ ] Vérifier des rechargements répétés à l’URL racine, avec et sans fragment, sur desktop et mobile avant publication.
+- [x] Vérifier des rechargements répétés à l’URL racine, avec et sans fragment, sur desktop et mobile avant publication.
