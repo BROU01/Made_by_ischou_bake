@@ -25,3 +25,9 @@
 - [x] Inspecter l’archive Progressbar.zip sans l’exécuter et relever les éléments visuels Candy Crush/Pirouline réutilisables.
 - [x] Adapter la progression du popup de remerciement avec le design validé, sans changer le délai de sept secondes ni le comportement WhatsApp.
 - [x] Vérifier le rendu de la progression sur desktop et mobile, avec prefers-reduced-motion et lecteur d’écran.
+- [x] Cartographier les effets de reveal, de profondeur et de changement de composition transposables depuis Pear sans copier son code ni compromettre les performances.
+- [x] Ajouter des motions de scroll limitées à transform et opacity, déclenchées par IntersectionObserver et désactivables avec prefers-reduced-motion.
+- [x] Vérifier que les motions de scroll restent fluides sur mobile et n’ajoutent pas de calcul continu pendant le défilement.
+- [x] Exécuter le test automatisé des garde-fous de motion avant publication sur Vercel.
+- [x] Documenter une migration du panneau /adminrootonly vers un backend, une base de données et une authentification compatibles avec le déploiement Vercel.
+- [ ] Définir le premier compte administrateur et la procédure sécurisée de connexion après mise en production du backend.
