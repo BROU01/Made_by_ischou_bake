@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import security from "../api/_security.js";
 import activityHandler from "../api/admin/activity.js";
@@ -49,4 +50,13 @@ test("les routes de données refusent une requête sans session avant Firestore"
     assert.equal(response.body.error, "SESSION_REQUIRED");
     assert.equal(response.headers["Cache-Control"], "no-store, max-age=0");
   }
+});
+
+test("le helper Firebase accepte les variantes de clé injectées par Vercel sans accepter de valeur non PEM", async () => {
+  const source = await readFile(new URL("../api/_firebase.js", import.meta.url), "utf8");
+  assert.match(source, /function normalizedPrivateKey\(value\)/);
+  assert.match(source, /JSON\.parse\(key\)/);
+  assert.match(source, /replace\(\/\\\\n\/g, "\\n"\)/);
+  assert.match(source, /BEGIN PRIVATE KEY/);
+  assert.match(source, /ADMIN_NOT_CONFIGURED/);
 });

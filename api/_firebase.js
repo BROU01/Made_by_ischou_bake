@@ -10,11 +10,28 @@ function requiredEnv(name) {
   return value;
 }
 
+function normalizedPrivateKey(value) {
+  let key = String(value).trim();
+  if (key.startsWith("{")) {
+    try {
+      const parsed = JSON.parse(key);
+      if (typeof parsed.private_key === "string") key = parsed.private_key;
+    } catch {
+      // La validation PEM ci-dessous renverra une erreur contrôlée si le JSON est incomplet.
+    }
+  }
+  key = key.replace(/^['"]|['"]$/g, "").replace(/\\n/g, "\n").trim();
+  if (!key.includes("-----BEGIN PRIVATE KEY-----") || !key.includes("-----END PRIVATE KEY-----")) {
+    throw new AdminAccessError(503, "ADMIN_NOT_CONFIGURED", "La clé de service Firebase de la Preview est invalide.");
+  }
+  return key;
+}
+
 function serviceAccount() {
   return {
     projectId: requiredEnv("FIREBASE_PROJECT_ID"),
     clientEmail: requiredEnv("FIREBASE_CLIENT_EMAIL"),
-    privateKey: requiredEnv("FIREBASE_PRIVATE_KEY").replace(/\\n/g, "\n"),
+    privateKey: normalizedPrivateKey(requiredEnv("FIREBASE_PRIVATE_KEY")),
   };
 }
 
