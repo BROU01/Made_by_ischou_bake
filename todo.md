@@ -21,3 +21,4 @@
 - [x] Restaurer le design du popup de remerciement, son GIF et une barre de progression de sept secondes avant WhatsApp.
 - [x] Renforcer les reveals et le scroll avec des animations performantes limitées à transform et opacity, sans recréer de parallaxe coûteuse.
 - [x] Vérifier que l’intégration des photos, du logo et des animations ne casse ni les prix, ni le panier, ni WhatsApp, ni la réactivité mobile.
+- [x] Arrêter le typewriter après un clic volontaire sur Pastels, Crêpes ou Box afin de respecter l’interaction explicite du visiteur.

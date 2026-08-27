@@ -15,6 +15,7 @@ Adresse de production : `https://ischou.vercel.app/?v=b122bd5`
 | Supplément Banane | La règle reste limitée aux crêpes et aux box. La formule pastel ne propose pas de contrôle Banane. |
 | Popup | Le popup de remerciement s’ouvre, le GIF est chargé, la barre a le rôle `progressbar` et le délai de sept secondes est configuré. |
 | Typewriter | Un clic sur un état change le message actif. Le test a confirmé l’état Crêpes et l’écriture progressive. |
+| Sélection manuelle | Après un clic sur Box, la phrase complète « Box prêtes à partager. » est restée stable après plus d’une seconde ; l’autoplay n’écrase donc pas un choix volontaire. |
 | Console | Aucune erreur JavaScript n’a été observée durant le chargement et les tests. |
 
 ## Vérification manuelle conseillée à la cliente
