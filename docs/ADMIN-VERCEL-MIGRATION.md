@@ -64,6 +64,10 @@ Vercel protège l’infrastructure réseau et peut compléter la sécurité appl
 
 La landing actuelle continuera à ouvrir WhatsApp. L’enregistrement d’une commande en base ne sera ajouté qu’avec une case de consentement explicite, une information claire sur les données conservées et une finalité limitée à la gestion de la commande.
 
+## Mise à jour — 28 août 2026
+
+Une Preview statique de l'interface (« Interface » à l'étape 5 ci-dessus, uniquement la maquette visuelle) a été construite dans `preview/admin/`, à partir de l'audit d'un ZIP de maquette générique fourni par la cliente (`docs/AUDIT-ZIP-ADMIN-ORIXA.md`). Elle couvre les six modules validés ci-dessus avec l'identité Made by Ischou, des données de catalogue réelles et des exemples de commandes clairement fictifs. Elle reste isolée (`noindex`, non liée au site public, exclue de `robots.txt`) et sans authentification : les étapes 2 à 4 et 6 à 7 restent entièrement à faire avant toute bascule.
+
 ## Références
 
 [1]: https://vercel.com/docs/functions "Vercel Functions — documentation officielle"

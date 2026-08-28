@@ -83,6 +83,10 @@ L’amélioration la plus utile est de réduire les incertitudes au moment de co
 4. **Gestion catalogue et commandes consenties** : modules admin, journal d’activité et règles de conservation.
 5. **Suivi individuel privé** : uniquement après l’étape précédente et après validation du texte de consentement.
 
+## Mise à jour — 28 août 2026
+
+L'étape 1 (SEO et partage social) a été posée sans nécessiter de compte externe : balise canonique, Open Graph, carte X (Twitter), `robots.txt`, `sitemap.xml` et un JSON-LD `FoodEstablishment` minimal (nom, adresse, téléphone, URL déjà publiés) sont maintenant dans `index.html`. La création de la propriété Google Search Console et de la propriété Google Analytics 4 reste bloquée sur une action de la cliente elle-même : elle seule peut se connecter à son compte Google et accepter les conditions. Aucun identifiant Google n'a été demandé ni saisi à sa place.
+
 ## Références
 
 [1]: https://developers.google.com/search/docs/appearance/core-web-vitals "Google Search Central — Core Web Vitals"
